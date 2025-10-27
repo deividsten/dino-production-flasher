@@ -1,4 +1,4 @@
---- Session Log Started: 2025-10-27 16:07:24 ---
+--- Session Log Started: 2025-10-27 16:50:06 ---
 
 ('Firebase', '🚀 Starting DinoCore Production Flasher v1.2.14')
 ('Firebase', '📍 Working directory: C:\\Users\\deivi\\OneDrive\\Documents\\Dino\\try 6\\cleaned_gui_flasher')
@@ -6,33 +6,28 @@
 ('Firebase', '⚠️ Firebase not available')
 🚀 Starting QR Scanner Workflow - Field ready for scanning!
 📱 Position QR scanner and scan toy code...
+🌐 Language changed to zh_CN - refreshing all UI texts
 📋 Input received: https://bondu.com/toy/wrek2b
 🆔 Processed Toy ID: toy_wrek2b
-✅ ESP32 detected on port COM21
-🌐 Language changed to zh_CN - refreshing all UI texts
-🌐 Language changed to en - refreshing all UI texts
-🌐 Language changed to zh_CN - refreshing all UI texts
-🌐 Language changed to en - refreshing all UI texts
-🌐 Language changed to zh_CN - refreshing all UI texts
-✅ Device ready on port: COM21
+✅ ESP32 detected on port COM28
+✅ Device ready on port: COM28
 🎯 Using default hardware version: 1.9.1
-✅ ESP32 detected on port COM21
+✅ ESP32 detected on port COM28
 🚀 Auto-starting Testing & eFuse flash...
---- Processing new device on COM21 ---
+--- Processing new device on COM28 ---
 Attempting to burn eFuse with version 1.9.1...
 Attempting to burn eFuse with version 1.9.1...
 Attempting to reset device into download mode...
 Device reset successful, proceeding with eFuse burning...
-🌐 Language changed to en - refreshing all UI texts
 [OK] eFuse burned successfully.
 Burn command succeeded. Verifying by reading back eFuse...
-Attempting to read eFuse from COM21...
+Attempting to read eFuse from COM28...
 [OK] Found raw eFuse version: 1.9.1
 [OK] Verification successful. Version 1.9.1 is burned.
 eFuse burning completed successfully. Starting firmware flash...
--- Starting testing flash for HW 1.9.1 on COM21 --
+-- Starting testing flash for HW 1.9.1 on COM28 --
 ('show_progress',)
--- Starting testing flash for HW 1.9.1 on COM21 --
+-- Starting testing flash for HW 1.9.1 on COM28 --
 Downloading testing firmware for HW 1.9.1...
 Found compatible build: qc
 Downloading bootloader.bin...
@@ -47,14 +42,14 @@ Warning: Deprecated: Choice 'default_reset' for option '--before' is deprecated.
 Warning: Deprecated: Choice 'hard_reset' for option '--after' is deprecated. Use 'hard-reset' instead.
 Warning: Deprecated: Command 'write_flash' is deprecated. Use 'write-flash' instead.
 esptool v5.1.0
-Serial port COM21:
+Serial port COM28:
 Connecting...
-Connected to ESP32-S3 on COM21:
+Connected to ESP32-S3 on COM28:
 Chip type:          ESP32-S3 (QFN56) (revision v0.2)
 Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
 Crystal frequency:  40MHz
 USB mode:           USB-Serial/JTAG
-MAC:                8c:bf:ea:84:43:c0
+MAC:                8c:bf:ea:85:2e:64
 
 Uploading stub flasher...
 Running stub flasher...
@@ -71,167 +66,232 @@ SHA digest in image updated.
 Compressed 20976 bytes to 13360...
 
 ('progress_update', 'Flashing... 0.0%')
+
 ('progress_update', 'Flashing... 100.0%')
-Wrote 20976 bytes (13360 compressed) at 0x00000000 in 0.2 seconds (804.0 kbit/s).
+Wrote 20976 bytes (13360 compressed) at 0x00000000 in 0.2 seconds (756.3 kbit/s).
 Hash of data verified.
 Compressed 1681376 bytes to 1014463...
 
 ('progress_update', 'Flashing... 0.0%')
 ('progress', 0)
+
 ('progress_update', 'Flashing... 1.6%')
 ('progress', 1)
+
 ('progress_update', 'Flashing... 3.2%')
 ('progress', 3)
+
 ('progress_update', 'Flashing... 4.8%')
 ('progress', 4)
+
 ('progress_update', 'Flashing... 6.5%')
 ('progress', 6)
+
 ('progress_update', 'Flashing... 8.1%')
 ('progress', 8)
+
 ('progress_update', 'Flashing... 9.7%')
 ('progress', 9)
+
 ('progress_update', 'Flashing... 11.3%')
 ('progress', 11)
+
 ('progress_update', 'Flashing... 12.9%')
 ('progress', 12)
+
 ('progress_update', 'Flashing... 14.5%')
 ('progress', 14)
+
 ('progress_update', 'Flashing... 16.2%')
 ('progress', 16)
+
 ('progress_update', 'Flashing... 17.8%')
 ('progress', 17)
+
 ('progress_update', 'Flashing... 19.4%')
 ('progress', 19)
+
 ('progress_update', 'Flashing... 21.0%')
 ('progress', 21)
+
 ('progress_update', 'Flashing... 22.6%')
 ('progress', 22)
+
 ('progress_update', 'Flashing... 24.2%')
 ('progress', 24)
+
 ('progress_update', 'Flashing... 25.8%')
 ('progress', 25)
+
 ('progress_update', 'Flashing... 27.5%')
 ('progress', 27)
+
 ('progress_update', 'Flashing... 29.1%')
 ('progress', 29)
+
 ('progress_update', 'Flashing... 30.7%')
 ('progress', 30)
+
 ('progress_update', 'Flashing... 32.3%')
 ('progress', 32)
+
 ('progress_update', 'Flashing... 33.9%')
 ('progress', 33)
+
 ('progress_update', 'Flashing... 35.5%')
 ('progress', 35)
+
 ('progress_update', 'Flashing... 37.1%')
 ('progress', 37)
+
 ('progress_update', 'Flashing... 38.8%')
 ('progress', 38)
+
 ('progress_update', 'Flashing... 40.4%')
 ('progress', 40)
+
 ('progress_update', 'Flashing... 42.0%')
 ('progress', 42)
+
 ('progress_update', 'Flashing... 43.6%')
 ('progress', 43)
+
 ('progress_update', 'Flashing... 45.2%')
 ('progress', 45)
+
 ('progress_update', 'Flashing... 46.8%')
 ('progress', 46)
+
 ('progress_update', 'Flashing... 48.5%')
 ('progress', 48)
+
 ('progress_update', 'Flashing... 50.1%')
 ('progress', 50)
+
 ('progress_update', 'Flashing... 51.7%')
 ('progress', 51)
+
 ('progress_update', 'Flashing... 53.3%')
 ('progress', 53)
+
 ('progress_update', 'Flashing... 54.9%')
 ('progress', 54)
+
 ('progress_update', 'Flashing... 56.5%')
 ('progress', 56)
+
 ('progress_update', 'Flashing... 58.1%')
 ('progress', 58)
+
 ('progress_update', 'Flashing... 59.8%')
 ('progress', 59)
+
 ('progress_update', 'Flashing... 61.4%')
 ('progress', 61)
+
 ('progress_update', 'Flashing... 63.0%')
 ('progress', 63)
+
 ('progress_update', 'Flashing... 64.6%')
 ('progress', 64)
+
 ('progress_update', 'Flashing... 66.2%')
 ('progress', 66)
+
 ('progress_update', 'Flashing... 67.8%')
 ('progress', 67)
+
 ('progress_update', 'Flashing... 69.4%')
 ('progress', 69)
+
 ('progress_update', 'Flashing... 71.1%')
 ('progress', 71)
+
 ('progress_update', 'Flashing... 72.7%')
 ('progress', 72)
+
 ('progress_update', 'Flashing... 74.3%')
 ('progress', 74)
+
 ('progress_update', 'Flashing... 75.9%')
 ('progress', 75)
+
 ('progress_update', 'Flashing... 77.5%')
 ('progress', 77)
+
 ('progress_update', 'Flashing... 79.1%')
 ('progress', 79)
+
 ('progress_update', 'Flashing... 80.8%')
 ('progress', 80)
+
 ('progress_update', 'Flashing... 82.4%')
 ('progress', 82)
+
 ('progress_update', 'Flashing... 84.0%')
 ('progress', 84)
+
 ('progress_update', 'Flashing... 85.6%')
 ('progress', 85)
+
 ('progress_update', 'Flashing... 87.2%')
 ('progress', 87)
+
 ('progress_update', 'Flashing... 88.8%')
 ('progress', 88)
+
 ('progress_update', 'Flashing... 90.4%')
 ('progress', 90)
+
 ('progress_update', 'Flashing... 92.1%')
 ('progress', 92)
+
 ('progress_update', 'Flashing... 93.7%')
 ('progress', 93)
+
 ('progress_update', 'Flashing... 95.3%')
 ('progress', 95)
+
 ('progress_update', 'Flashing... 96.9%')
 ('progress', 96)
+
 ('progress_update', 'Flashing... 98.5%')
 ('progress', 98)
+
 ('progress_update', 'Flashing... 100.0%')
 ('progress', 100)
-Wrote 1681376 bytes (1014463 compressed) at 0x00260000 in 9.5 seconds (1414.5 kbit/s).
+Wrote 1681376 bytes (1014463 compressed) at 0x00260000 in 9.9 seconds (1363.9 kbit/s).
 Hash of data verified.
 Compressed 3072 bytes to 176...
 
 ('progress_update', 'Flashing... 0.0%')
+
 ('progress_update', 'Flashing... 100.0%')
-Wrote 3072 bytes (176 compressed) at 0x00010000 in 0.0 seconds (1088.6 kbit/s).
+Wrote 3072 bytes (176 compressed) at 0x00010000 in 0.0 seconds (1058.9 kbit/s).
 Hash of data verified.
 Compressed 8192 bytes to 31...
 
 ('progress_update', 'Flashing... 0.0%')
+
 ('progress_update', 'Flashing... 100.0%')
-Wrote 8192 bytes (31 compressed) at 0x00015000 in 0.0 seconds (1982.9 kbit/s).
+Wrote 8192 bytes (31 compressed) at 0x00015000 in 0.0 seconds (2017.7 kbit/s).
 Hash of data verified.
 
 Hard resetting via RTS pin...
 [OK] Flash successful!
 ('hide_progress',)
--- Finished flashing COM21 --
+-- Finished flashing COM28 --
 Flash completed successfully. Starting serial monitor...
---- Serial monitor started for COM21 ---
+--- Serial monitor started for COM28 ---
 I (103) esp_image: segment 2: paddr=002c0020 vaddr=42000020 sizeI (805) esp_psram: SPI SRAM memory test OK
-I (813) cpu_start: Pro cpu start user code
+I (814) cpu_start: Pro cpu start user code
 I (814) cpu_start: cpu freq: 240000000 Hz
 I (814) app_init: Application information:
 I (814) app_init: Project name:     simple-speaker
 I (814) app_init: App version:      0.1.2-dev
-I (814) app_init: Compile time:     Sep  5 2025 13:46:33
-I (814) app_init: ELF file SHA256:  e685db1b8...
-I (814) app_init: ESP-IDF:          v5.4.1
+I (815) app_init: Compile time:     Sep  5 2025 13:46:33
+I (815) app_init: ELF file SHA256:  e685db1b8...
+I (815) app_init: ESP-IDF:          v5.4.1
 I (815) efuse_init: Min chip rev:     v0.0
 I (815) efuse_init: Max chip rev:     v0.99
 I (815) efuse_init: Chip rev:         v0.2
@@ -244,7 +304,7 @@ I (1044) esp_psram: Adding pool of 7808K of PSRAM memory to heap allocator
 I (1045) spi_flash: detected chip: generic
 I (1045) spi_flash: flash io: dio
 I (1046) sleep_gpio: Configure to isolate all GPIO pins in sleep state
-I (1046) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (1047) sleep_gpio: Enable automatic switching of GPIO sleep configuration
 I (1047) coexist: coex firmware version: e727207
 I (1047) coexist: coexist rom version e7ae62f
 I (1048) main_task: Started on CPU0
@@ -274,134 +334,271 @@ I (1068) BATTERY_MONITOR: Features: Coulomb SOC, Current-based charging, Learnin
 I (1068) SHARED_I2C: ✅ Added I2C device: address=0x36, speed=100000 Hz
 I (1068) BATTERY_MONITOR: MAX17055 I2C device initialized on shared bus (address 0x36, speed 100kHz)
 I (1068) BATTERY_MONITOR: ⏱️  Waiting 200ms for MAX17055 power stabilization...
-I (1378) BATTERY_MONITOR: ✅ MAX17055 communication test successful (STATUS=0x0082)
-I (1378) BATTERY_MONITOR: Initializing MAX17055 fuel gauge...
-I (1378) BATTERY_MONITOR: No saved parameters found, using learned defaults
-I (1378) BATTERY_MONITOR: Applied learned parameters to fuel gauge
-I (1378) BATTERY_MONITOR: Previous battery state loaded: Session #1, Last SOC: 100.0%
-I (1378) BATTERY_MONITOR: 🔍 ===== FUEL GAUGE LEARNING DIAGNOSTICS =====
-I (1378) BATTERY_MONITOR: 🔍   FSTAT: 0x1008
-I (1378) BATTERY_MONITOR: 🔍     - Data Ready: YES
-I (1378) BATTERY_MONITOR: 🔍     - Relaxation: None
-I (1378) BATTERY_MONITOR: 🔍     - Full Qualified: YES
-I (1378) BATTERY_MONITOR: 🔍   LearnCFG: 0x0017
-I (1378) BATTERY_MONITOR: 🔍     - Learning Stage: 1
-I (1378) BATTERY_MONITOR: 🔍     - Learning Active: YES
-I (1378) BATTERY_MONITOR: 🔍   ModelCFG: 0x0460
-I (1378) BATTERY_MONITOR: 🔍     - Model ID: 6
-I (1378) BATTERY_MONITOR: 🔍     - Refresh: COMPLETE
-I (1378) BATTERY_MONITOR: 🔍 ============================================
-I (1388) BATTERY_MONITOR: 🎯 Enabling MAX17055 learning algorithm...
-I (1398) BATTERY_MONITOR: 🎯 ✅ Fuel gauge learning algorithm enabled successfully!
-I (1398) BATTERY_MONITOR: MAX17055 initialization complete
-I (1398) BATTERY_MONITOR: ✅ FG_GPOUT (GPIO16) configured for MAX17055 alerts
-I (1398) BATTERY_MONITOR: 🔔 Configuring MAX17055 SOC alert for 1% threshold...
-I (1398) BATTERY_MONITOR: ✅ SOC alert configured: Min=1%, Max=disabled
-I (1398) BATTERY_MONITOR: ✅ MAX17055 SOC alerts enabled - will trigger at 1% SOC
-I (1398) BATTERY_MONITOR: Battery monitoring system initialized successfully
-I (1398) recording_mode: 🔋 Checking critical battery protection...
-I (1398) recording_mode: 🔋 Battery voltage: 3.373 V
-I (1398) recording_mode: ✅ Battery voltage OK: 3.373 V >= 2.3V
-I (1398) BATTERY_MONITOR: Battery monitoring task started successfully
-I (1398) BATTERY_MONITOR: Battery monitoring task started
-I (1398) recording_mode: 🔋 Battery monitoring task started
-I (1398) power_source_test: 🔌 Initializing power source test (TPS2117DRL control)
-I (1398) power_source_test: ✅ Power source test initialized (initial: BATTERY)
-I (1398) led_manager: Initializing LED manager...
-I (1398) neopixel: Initializing neopixel LEDs on PDM hardware (PDM_v2)
-I (1398) neopixel: Boost enable pin configured and set high (normal logic)
-I (1398) neopixel: Neopixel LED system initialized successfully on pin 8
-I (1408) neopixel: Configured for 9 WS2812B LEDs
-I (1408) led_manager: Setting initial LED state to normal operation (white)
-I (1408) led_manager: Applying LED state: Normal Operation (White)
-I (1408) neopixel: Stopping any running LED animation
-I (1408) neopixel: LED animation stopped
-I (1408) led_manager: LED manager initialized successfully (hardware available: YES)
-I (1408) recording_mode: USB_SENSE (GPIO6) is HIGH
-I (1408) BATTERY_MONITOR: 🔍 Coulomb SoC calc: REG_QH=0xFDF9 → 32508.5 mAh → 541.8% SoC
-I (1408) recording_mode: 🔄 Creating button processing task...
-I (1408) BATTERY_MONITOR: === BATTERY STATUS ===
-I (1408) recording_mode: 🔄 Button processing task started
-I (1408) recording_mode: Audio test disabled; skipping record/playback loop
-I (1408) BATTERY_MONITOR: Present:     YES
-I (1408) MFG_WIFI: 🔊 WiFi test disabled - initializing Bluetooth immediately...
-I (1408) BATTERY_MONITOR: Voltage:     3.373 V
-I (1408) BATTERY_MONITOR: USB Power:   DETECTED
-I (1408) BLE_INIT: BT controller compile version [d74042a]
-I (1408) BATTERY_MONITOR: Charge IC:   CHARGING IN PROGRESS (STAT1=1, STAT2=0)
-I (1408) BATTERY_MONITOR: Current:     353.9 mA
-I (1408) BATTERY_MONITOR: Avg Current: 360.2 mA
-I (1408) BATTERY_MONITOR: SOC:         100.0%
-I (1408) BATTERY_MONITOR: Temperature: 40.8°C
-I (1408) BATTERY_MONITOR: Cycles:      14
-I (1408) BLE_INIT: Bluetooth MAC: 8c:bf:ea:84:43:c2
-📱 Captured Bluetooth MAC: 8C:BF:EA:84:43:C2
-I (1408) BATTERY_MONITOR: Charging:    YES
-I (1408) BATTERY_MONITOR: Session:     #2
-I (1408) BATTERY_MONITOR: ======================
-I (1408) BATTERY_MONITOR: 🔋 Battery is charging (353.9 mA)
-I (1408) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11
+I (1368) BATTERY_MONITOR: ✅ MAX17055 communication test successful (STATUS=0x0082)
+I (1368) BATTERY_MONITOR: Initializing MAX17055 fuel gauge...
+I (1368) BATTERY_MONITOR: No saved parameters found, using learned defaults
+I (1368) BATTERY_MONITOR: Applied learned parameters to fuel gauge
+I (1368) BATTERY_MONITOR: 🔍 ===== FUEL GAUGE LEARNING DIAGNOSTICS =====
+I (1368) BATTERY_MONITOR: 🔍   FSTAT: 0x1508
+I (1368) BATTERY_MONITOR: 🔍     - Data Ready: YES
+I (1368) BATTERY_MONITOR: 🔍     - Relaxation: None
+I (1368) BATTERY_MONITOR: 🔍     - Full Qualified: YES
+I (1368) BATTERY_MONITOR: 🔍   LearnCFG: 0x0017
+I (1368) BATTERY_MONITOR: 🔍     - Learning Stage: 1
+I (1368) BATTERY_MONITOR: 🔍     - Learning Active: YES
+I (1368) BATTERY_MONITOR: 🔍   ModelCFG: 0x0460
+I (1368) BATTERY_MONITOR: 🔍     - Model ID: 6
+I (1368) BATTERY_MONITOR: 🔍     - Refresh: COMPLETE
+I (1368) BATTERY_MONITOR: 🔍 ============================================
+I (1368) BATTERY_MONITOR: 🎯 Enabling MAX17055 learning algorithm...
+I (1388) BATTERY_MONITOR: 🎯 ✅ Fuel gauge learning algorithm enabled successfully!
+I (1388) BATTERY_MONITOR: MAX17055 initialization complete
+I (1388) BATTERY_MONITOR: ✅ FG_GPOUT (GPIO16) configured for MAX17055 alerts
+I (1388) BATTERY_MONITOR: 🔔 Configuring MAX17055 SOC alert for 1% threshold...
+I (1388) BATTERY_MONITOR: ✅ SOC alert configured: Min=1%, Max=disabled
+I (1388) BATTERY_MONITOR: ✅ MAX17055 SOC alerts enabled - will trigger at 1% SOC
+I (1388) BATTERY_MONITOR: Battery monitoring system initialized successfully
+I (1388) recording_mode: 🔋 Checking critical battery protection...
+I (1388) recording_mode: 🔋 Battery voltage: 3.431 V
+I (1388) recording_mode: ✅ Battery voltage OK: 3.431 V >= 2.3V
+I (1388) BATTERY_MONITOR: Battery monitoring task started successfully
+I (1388) BATTERY_MONITOR: Battery monitoring task started
+I (1388) recording_mode: 🔋 Battery monitoring task started
+I (1388) power_source_test: 🔌 Initializing power source test (TPS2117DRL control)
+I (1388) power_source_test: ✅ Power source test initialized (initial: BATTERY)
+I (1388) led_manager: Initializing LED manager...
+I (1388) neopixel: Initializing neopixel LEDs on PDM hardware (PDM_v2)
+I (1388) neopixel: Boost enable pin configured and set high (normal logic)
+I (1388) neopixel: Neopixel LED system initialized successfully on pin 8
+I (1388) neopixel: Configured for 9 WS2812B LEDs
+I (1398) led_manager: Setting initial LED state to normal operation (white)
+I (1398) led_manager: Applying LED state: Normal Operation (White)
+I (1398) neopixel: Stopping any running LED animation
+I (1398) neopixel: LED animation stopped
+I (1398) led_manager: LED manager initialized successfully (hardware available: YES)
+I (1398) BATTERY_MONITOR: 🔍 Coulomb SoC calc: REG_QH=0x01DA → 237.0 mAh → 4.0% SoC
+I (1398) recording_mode: USB_SENSE (GPIO6) is HIGH
+I (1398) BATTERY_MONITOR: === BATTERY STATUS ===
+I (1398) recording_mode: 🔄 Creating button processing task...
+I (1398) BATTERY_MONITOR: Present:     YES
+I (1398) BATTERY_MONITOR: Voltage:     3.431 V
+I (1398) recording_mode: 🔄 Button processing task started
+I (1398) recording_mode: Audio test disabled; skipping record/playback loop
+I (1398) BATTERY_MONITOR: USB Power:   DETECTED
+I (1398) MFG_WIFI: 🔊 WiFi test disabled - initializing Bluetooth immediately...
+I (1398) BATTERY_MONITOR: Charge IC:   CHARGING IN PROGRESS (STAT1=1, STAT2=0)
+I (1398) BLE_INIT: BT controller compile version [d74042a]
+I (1398) BATTERY_MONITOR: Current:     378.1 mA
+I (1398) BATTERY_MONITOR: Avg Current: 449.7 mA
+I (1398) BATTERY_MONITOR: SOC:         4.0%
+I (1398) BATTERY_MONITOR: Temperature: 35.4°C
+I (1398) BATTERY_MONITOR: Cycles:      1
+I (1398) BATTERY_MONITOR: Charging:    YES
+I (1398) BATTERY_MONITOR: Session:     #0
+I (1398) BATTERY_MONITOR: ======================
+I (1398) BLE_INIT: Bluetooth MAC: 8c:bf:ea:85:2e:66
+📱 Captured Bluetooth MAC: 8C:BF:EA:85:2E:66
+I (1398) BATTERY_MONITOR: 🔋 Battery is charging (378.1 mA)
+I (1398) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11
 I (1458) BLE_HANDLER: Bluetooth LE initialized successfully
-I (1458) device_utils: Device ID initialized: 8cbfea8443c0
-I (1458) device_utils: MAC Address: 8C:BF:EA:84:43:C0
+I (1458) device_utils: Device ID initialized: 8cbfea852e64
+I (1458) device_utils: MAC Address: 8C:BF:EA:85:2E:64
 I (1458) BLE_HANDLER: === CONFIGURING BLE ADVERTISING ===
-I (1458) BLE_HANDLER: Setting device name to: Toy-43C0
-📱 Captured Bluetooth Name: Toy-43C0
-I (1468) BLE_HANDLER: BLE Advertising Configuration:
-I (1468) BLE_HANDLER: 📡 Service UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
-I (1468) BLE_HANDLER: 📱 Device Name: Toy-43C0 (in scan response)
-I (1468) BLE_HANDLER: ⏱️  Advertising Interval: 32 - 64 (0.625ms units)
-I (1468) BLE_HANDLER: 🔍 Discoverable: YES (General Discoverable)
-I (1468) BLE_HANDLER: 📶 TX Power: Included in scan response
-I (1468) BLE_HANDLER: Service UUID bytes (little-endian):
-I (1468) BLE_HANDLER: cd e8 e7 fb f1 16 0d 94 4e 47 5b ad ca 98 74 a0
-I (1468) BLE_HANDLER: GATT server registered, app_id: 0000
-I (1468) BLE_HANDLER: Service creation initiated successfully
-I (1468) BLE_HANDLER: Service created successfully, service_handle: 40
-I (1468) BLE_HANDLER: Created service with UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
-I (1468) BLE_HANDLER: React Native app should look for: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
-I (1468) BLE_HANDLER: Adding characteristic: Device Info (index: 0)
-I (1468) BLE_HANDLER: GATTS event: 12
-I (1468) BLE_HANDLER: Characteristic added successfully, char_handle: 42
-I (1468) BLE_HANDLER: Adding characteristic: WiFi Config (index: 1)
-I (1468) BLE_HANDLER: ✅ Added CCCD descriptor for WiFi Config characteristic
-I (1468) BLE_HANDLER: Characteristic added successfully, char_handle: 44
-I (1468) BLE_HANDLER: Adding characteristic: SSID (index: 2)
-I (1468) BLE_HANDLER: ✅ Added CCCD descriptor for SSID characteristic
-I (1468) BLE_HANDLER: Characteristic descriptor added - handle: 45
-I (1468) BLE_HANDLER: Characteristic added successfully, char_handle: 47
-I (1468) BLE_HANDLER: Adding characteristic: Connectivity (index: 3)
-I (1468) BLE_HANDLER: Characteristic descriptor added - handle: 48
-I (1468) BLE_HANDLER: Characteristic added successfully, char_handle: 50
-I (1468) BLE_HANDLER: Adding characteristic: Log (index: 4)
+I (1458) BLE_HANDLER: Setting device name to: Toy-2E64
+📱 Captured Bluetooth Name: Toy-2E64
+I (1458) BLE_HANDLER: BLE Advertising Configuration:
+I (1458) BLE_HANDLER: 📡 Service UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
+I (1458) BLE_HANDLER: 📱 Device Name: Toy-2E64 (in scan response)
+I (1458) BLE_HANDLER: ⏱️  Advertising Interval: 32 - 64 (0.625ms units)
+I (1458) BLE_HANDLER: 🔍 Discoverable: YES (General Discoverable)
+I (1458) BLE_HANDLER: 📶 TX Power: Included in scan response
+I (1458) BLE_HANDLER: Service UUID bytes (little-endian):
+I (1458) BLE_HANDLER: cd e8 e7 fb f1 16 0d 94 4e 47 5b ad ca 98 74 a0
+I (1458) BLE_HANDLER: GATT server registered, app_id: 0000
+I (1458) BLE_HANDLER: Service creation initiated successfully
+I (1458) BLE_HANDLER: Service created successfully, service_handle: 40
+I (1458) BLE_HANDLER: Created service with UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
+I (1458) BLE_HANDLER: React Native app should look for: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
+I (1458) BLE_HANDLER: Adding characteristic: Device Info (index: 0)
+I (1458) BLE_HANDLER: GATTS event: 12
+I (1458) BLE_HANDLER: Characteristic added successfully, char_handle: 42
+I (1458) BLE_HANDLER: Adding characteristic: WiFi Config (index: 1)
+I (1458) BLE_HANDLER: ✅ Added CCCD descriptor for WiFi Config characteristic
+I (1458) BLE_HANDLER: Characteristic added successfully, char_handle: 44
+I (1458) BLE_HANDLER: Adding characteristic: SSID (index: 2)
+I (1458) BLE_HANDLER: ✅ Added CCCD descriptor for SSID characteristic
+I (1458) BLE_HANDLER: Characteristic descriptor added - handle: 45
+I (1458) BLE_HANDLER: Characteristic added successfully, char_handle: 47
+I (1458) BLE_HANDLER: Adding characteristic: Connectivity (index: 3)
+I (1458) BLE_HANDLER: Characteristic descriptor added - handle: 48
+I (1458) BLE_HANDLER: Characteristic added successfully, char_handle: 50
+I (1458) BLE_HANDLER: Adding characteristic: Log (index: 4)
 I (1468) BLE_HANDLER: ✅ Added CCCD descriptor for Log characteristic
 I (1468) BLE_HANDLER: Characteristic added successfully, char_handle: 52
 I (1468) BLE_HANDLER: Adding characteristic: QA Control (index: 5)
 I (1468) BLE_HANDLER: Characteristic descriptor added - handle: 53
 I (1468) BLE_HANDLER: Characteristic added successfully, char_handle: 55
 I (1468) BLE_HANDLER: Adding characteristic: QA Events (index: 6)
-I (1478) BLE_HANDLER: ✅ Added CCCD descriptor for QA Events characteristic
-I (1478) BLE_HANDLER: Characteristic added successfully, char_handle: 57
-I (1478) BLE_HANDLER: Connection status changed to: ADVERTISING
-I (1478) BLE_HANDLER: ✓ BLE advertising started with optimized configuration
-I (1478) BLE_HANDLER: ✓ Service UUID in advertising data: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
-I (1478) BLE_HANDLER: ✓ Device name in scan response: Toy-43C0
-I (1478) BLE_HANDLER: ✓ React Native app should now be able to discover this device
-I (1478) BLE_HANDLER: Characteristic descriptor added - handle: 58
-I (1478) BLE_HANDLER: ✓ Advertising data configured successfully
-I (1478) BLE_HANDLER: ✓ Service UUID a07498ca-ad5b-474e-940d-16f1fbe7e8cd is now in advertising data
-I (1478) BLE_HANDLER: ✓ Scan response data set complete successfully
-I (1478) BLE_HANDLER: ✓ Device name and TX power are now in scan response
-I (1478) BLE_HANDLER: 🚀 ADVERTISING STARTED SUCCESSFULLY!
-I (1478) BLE_HANDLER: 🔍 React Native app should now be able to find this device
-I (1478) BLE_HANDLER: 📱 Device appears as: Toy-43C0
-I (1478) BLE_HANDLER: 🔗 Service UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
-I (1478) BLE_HANDLER: ⚡ The device is now discoverable and ready for connection!
+I (1468) BLE_HANDLER: ✅ Added CCCD descriptor for QA Events characteristic
+I (1468) BLE_HANDLER: Characteristic added successfully, char_handle: 57
+I (1468) BLE_HANDLER: Connection status changed to: ADVERTISING
+I (1468) BLE_HANDLER: ✓ BLE advertising started with optimized configuration
+I (1468) BLE_HANDLER: ✓ Service UUID in advertising data: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
+I (1468) BLE_HANDLER: ✓ Device name in scan response: Toy-2E64
+I (1468) BLE_HANDLER: ✓ React Native app should now be able to discover this device
+I (1468) BLE_HANDLER: Characteristic descriptor added - handle: 58
+I (1468) BLE_HANDLER: ✓ Advertising data configured successfully
+I (1468) BLE_HANDLER: ✓ Service UUID a07498ca-ad5b-474e-940d-16f1fbe7e8cd is now in advertising data
+I (1468) BLE_HANDLER: ✓ Scan response data set complete successfully
+I (1468) BLE_HANDLER: ✓ Device name and TX power are now in scan response
+I (1468) BLE_HANDLER: 🚀 ADVERTISING STARTED SUCCESSFULLY!
+I (1468) BLE_HANDLER: 🔍 React Native app should now be able to find this device
+I (1468) BLE_HANDLER: 📱 Device appears as: Toy-2E64
+I (1468) BLE_HANDLER: 🔗 Service UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
+I (1468) BLE_HANDLER: ⚡ The device is now discoverable and ready for connection!
 🚀 BLE details captured. Auto-starting Bluetooth QC...
-I (1478) BLE_HANDLER: 🚀 Starting BLE advertising process for device: Toy-43C0
+I (1478) BLE_HANDLER: 🚀 Starting BLE advertising process for device: Toy-2E64
 I (1478) BLE_HANDLER: React Native app should look for service UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
-I (1478) MFG_WIFI: 🔊 Bluetooth initialized and advertising as: Toy-43C0
+I (1478) MFG_WIFI: 🔊 Bluetooth initialized and advertising as: Toy-2E64
 I (1478) recording_mode: ✅ System initialization complete - main thread exiting cleanly
 I (1478) main_task: Returned from app_main()
-❌ Bluetooth QC tester not available
-✅ ESP32 detected on port COM21
+🟦 Starting Bluetooth QC for MAC: 8C:BF:EA:85:2E:66...
+⏳ Waiting for device to signal it's ready for connection...
+⏳ Device signaled ready. Waiting additional 5 seconds for full initialization...
+🔎 Attempt 1/3: Scanning for device with MAC 8C:BF:EA:85:2E:66...
+- Found 68 BLE devices in this scan.
+- Device 0: Toy-43C0 (8C:BF:EA:84:43:C2)
+- Device 1: Unknown (56:F4:A1:9A:B9:43)
+- Device 2: Unknown (1B:CC:B1:AA:40:E5)
+- Device 3: Unknown (70:B0:1B:42:5B:12)
+- Device 4: Unknown (14:81:86:C8:43:0D)
+- Device 5: Unknown (71:A4:A7:4C:5E:7B)
+- Device 6: GBK_H6147_B1FF (D4:AD:FC:11:B1:FF)
+- Device 7: Omi DevK (FE:A9:23:16:C1:D9)
+- Device 8: Unknown (7F:F4:CD:77:CA:63)
+- Device 9: 8cbfea849750 (8C:BF:EA:84:97:52)
+- Device 10: Unknown (48:C6:F6:BC:37:33)
+- Device 11: Unknown (64:E7:D8:8C:E2:65)
+- Device 12: Unknown (59:E9:2B:C7:3C:04)
+- Device 13: Toy-2E64 (8C:BF:EA:85:2E:66)
+- Device 14: Unknown (74:89:0D:8D:D3:6E)
+- Device 15: Magical Toy (2C:CF:67:F6:FF:AA)
+- Device 16: Unknown (69:CE:1E:54:73:32)
+- Device 17: Unknown (77:DB:7D:0F:40:F1)
+- Device 18: Unknown (72:77:44:FE:40:79)
+- Device 19: Unknown (72:5D:29:49:E4:4B)
+- Device 20: Unknown (6E:14:2E:FE:66:E2)
+- Device 21: Unknown (55:86:C6:8B:A2:FE)
+- Device 22: Unknown (64:12:FC:DF:1F:DC)
+- Device 23: Unknown (CD:77:AB:16:10:55)
+- Device 24: Unknown (0D:D1:56:5E:8E:5F)
+- Device 25: Unknown (69:C9:3B:67:F0:94)
+- Device 26: Unknown (42:B4:C1:AA:8B:0F)
+- Device 27: Unknown (64:E7:D8:63:55:8D)
+- Device 28: Unknown (68:88:39:93:35:8F)
+- Device 29: Unknown (68:B9:19:E8:03:F0)
+- Device 30: Unknown (E2:DF:B6:1A:D5:D6)
+- Device 31: Unknown (15:81:BC:9E:B8:D4)
+- Device 32: Unknown (67:4C:9B:0C:DE:AF)
+- Device 33: Unknown (41:76:2E:C0:21:F0)
+- Device 34: Unknown (4E:7D:93:CB:A4:0C)
+- Device 35: GBK_H6147_0505 (D4:AD:FC:9E:05:05)
+- Device 36: Unknown (46:C7:6D:F9:EB:9D)
+- Device 37: Unknown (7B:F4:64:C6:F9:18)
+- Device 38: Unknown (44:6E:59:78:00:84)
+- Device 39: Unknown (50:EF:D0:69:E5:C5)
+- Device 40: Glowrium-H1_DF3A62 (24:EC:4A:DF:3A:62)
+- Device 41: S0044701c4b5d396bC (90:CE:B8:2B:E0:6D)
+- Device 42: Unknown (4F:84:83:7E:E4:CB)
+- Device 43: Unknown (D1:A9:52:33:09:0C)
+- Device 44: Unknown (7B:F4:64:5E:BC:0E)
+- Device 45: Unknown (4F:F2:59:CF:83:9A)
+- Device 46: Unknown (4D:35:F0:A9:4D:31)
+- Device 47: Unknown (47:6E:00:F8:13:1A)
+- Device 48: Unknown (1B:67:D1:5E:00:08)
+- Device 49: Unknown (7C:90:3C:CC:28:03)
+- Device 50: Unknown (7A:42:66:98:F3:0F)
+- Device 51: Glowrium-H1_FCE726 (48:CA:43:FC:E7:26)
+- Device 52: Unknown (F3:F8:E1:08:3E:DB)
+- Device 53: Unknown (4F:BC:DE:E4:0C:AA)
+- Device 54: Unknown (8C:26:AA:EF:C3:4C)
+- Device 55: Unknown (28:3C:90:65:5D:FB)
+- Device 56: Unknown (5C:C4:F8:E8:AB:FF)
+- Device 57: Unknown (77:0E:9E:7C:E7:55)
+- Device 58: Unknown (4A:5E:B7:B2:36:0F)
+- Device 59: Unknown (09:4C:56:64:EC:A6)
+- Device 60: Unknown (43:DC:8E:D0:53:73)
+- Device 61: Unknown (4C:D2:7F:67:F0:39)
+- Device 62: Unknown (FF:57:EE:73:B0:52)
+- Device 63: Unknown (E6:75:7E:2D:03:49)
+- Device 64: Unknown (64:66:92:B2:4D:61)
+- Device 65: Unknown (70:52:85:C8:E5:0F)
+- Device 66: Unknown (FF:0D:A9:F1:F0:5D)
+- Device 67: Unknown (5A:16:FE:34:71:06)
+🎯 MAC Address match found: Toy-2E64 at 8C:BF:EA:85:2E:66
+✅ Found device. Attempting to connect to 8C:BF:EA:85:2E:66...
+✅ Connected to Bluetooth device. Waiting for services to stabilize...
+MAC Address: 8C:BF:EA:85:2E:66
+🎯 QA TEST RESULTS:
+==================================================
+Test: Microphone Balance Test
+Result: ✅ PASS
+Details: Microphones balanced correctly
+Audio Balance: Balanced 🎵
+.1f
+.1f
+------------------------------
+Summary: 1/1 tests passed
+🎉 ALL TESTS PASSED - Device approved!
+📡 Inventory data sent to API successfully
+==================================================
+✅ ESP32 detected on port COM28
+✅ QC completed successfully - showing Flash New Device button
+📡 API data already sent for this device, skipping duplicate transmission
+⚠️ Firebase not available for backup sending
+⚠️ Security backup to Firebase failed
+✅ API data transmission completed successfully
+🎉 DEVICE WORKFLOW COMPLETED - Ready for next device
+I (61398) BATTERY_MONITOR: 🔍 Coulomb SoC calc: REG_QH=0x01E8 → 244.0 mAh → 4.1% SoC
+I (61398) BATTERY_MONITOR: === BATTERY STATUS ===
+I (61408) BATTERY_MONITOR: Present:     YES
+I (61408) BATTERY_MONITOR: Voltage:     3.437 V
+I (61408) BATTERY_MONITOR: USB Power:   DETECTED
+I (61408) BATTERY_MONITOR: Charge IC:   CHARGING IN PROGRESS (STAT1=1, STAT2=0)
+I (61408) BATTERY_MONITOR: Current:     430.5 mA
+I (61408) BATTERY_MONITOR: Avg Current: 418.9 mA
+I (61408) BATTERY_MONITOR: SOC:         4.1%
+I (61408) BATTERY_MONITOR: Temperature: 35.4°C
+I (61408) BATTERY_MONITOR: Cycles:      1
+I (61408) BATTERY_MONITOR: Charging:    YES
+I (61408) BATTERY_MONITOR: Session:     #0
+I (61408) BATTERY_MONITOR: ======================
+I (61408) BATTERY_MONITOR: 🔋 Battery is charging (430.5 mA)
+I (121408) BATTERY_MONITOR: 🔍 Coulomb SoC calc: REG_QH=0x01F6 → 251.0 mAh → 4.2% SoC
+I (121408) BATTERY_MONITOR: === BATTERY STATUS ===
+I (121418) BATTERY_MONITOR: Present:     YES
+I (121418) BATTERY_MONITOR: Voltage:     3.437 V
+I (121418) BATTERY_MONITOR: USB Power:   DETECTED
+I (121418) BATTERY_MONITOR: Charge IC:   CHARGING IN PROGRESS (STAT1=1, STAT2=0)
+I (121418) BATTERY_MONITOR: Current:     439.2 mA
+I (121418) BATTERY_MONITOR: Avg Current: 413.6 mA
+I (121418) BATTERY_MONITOR: SOC:         4.2%
+I (121418) BATTERY_MONITOR: Temperature: 35.3°C
+I (121418) BATTERY_MONITOR: Cycles:      1
+I (121418) BATTERY_MONITOR: Charging:    YES
+I (121418) BATTERY_MONITOR: Session:     #0
+I (121418) BATTERY_MONITOR: ======================
+I (121418) BATTERY_MONITOR: 🔋 Battery is charging (439.2 mA)
+🆕 User clicked 'Flash New Device' - resetting workflow...
+📋 Input received: asdasdasd
+🆔 Processed Toy ID: asdasdasd
+✅ ESP32 detected on port COM28
+✅ Device ready on port: COM28
+🎯 Using default hardware version: 1.9.1
+✅ ESP32 detected on port COM28
+🚀 Auto-starting Testing & eFuse flash...
+--- Processing new device on COM28 ---
+Attempting to burn eFuse with version 1.9.1...
+Attempting to burn eFuse with version 1.9.1...
+Attempting to reset device into download mode...
+Device reset failed, but continuing with eFuse burning...
