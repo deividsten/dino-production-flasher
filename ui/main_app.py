@@ -547,139 +547,6 @@ class FlasherApp:
             self.log_queue.put(f"⚠️ Error sending toy data to Firebase backup: {e}")
             return False
 
-    def start_production_flash_after_qc(self):
-        """Show flash new device button after successful QC (no auto-production flash)"""
-        # Just show the flash new device button and update workflow
-        self.log_queue.put("✅ QC completed successfully - showing Flash New Device button")
-
-        # Update device session to mark workflow as completed
-        toy_id_to_use = getattr(self, 'processed_toy_id', self.toy_id_var.get())
-        if FIREBASE_AVAILABLE and toy_id_to_use and self.physical_id:
-            try:
-                # Create updated session data with workflow completed
-                session_data = {
-                    'toy_id': toy_id_to_use,
-                    'physical_id': self.physical_id,
-                    'session_start': time.time() - 600,  # Approximate session start (10 minutes ago)
-                    'session_end': time.time(),
-                    'qc_passed': True,
-                    'device_name': self.captured_ble_name or 'Unknown',
-                    'workflow_completed': True,  # Mark as completed
-                    'production_flash_completed': False,  # No production flash in this mode
-                    'qc_results': []  # Will be updated from previous session
-                }
-
-                if store_device_session(session_data):
-                    self.log_queue.put("💾 Updated device session - workflow completed")
-                else:
-                    self.log_queue.put("⚠️ Failed to update device session")
-            except Exception as e:
-                self.log_queue.put(f"⚠️ Error updating device session: {e}")
-
-        # Send processed toy data to both API and Firebase backup
-        if hasattr(self, 'processed_toy_id') and self.processed_toy_id and self.physical_id:
-            try:
-                # Prepare the test data (logs) - same format as sent to API
-                logs_content = "\n".join(self.session_logs)
-                test_data = {"logs": logs_content}
-
-                # Send to Bondu API (using processed toy ID) - only if not already sent
-                api_success = False
-                api_error_msg = ""
-                api_full_error = ""
-
-                if API_AVAILABLE and not self.api_payload_sent:
-                    api_success, api_error_msg, api_full_error = send_to_bondu(
-                        toy_id=self.processed_toy_id,
-                        mac_address=self.physical_id.replace(':', '').lower(),
-                        test_data=test_data
-                    )
-
-                    if api_success:
-                        self.log_queue.put(f"✅ Processed toy data sent to Bondu API successfully (toy_id: {self.processed_toy_id})")
-                        self.log_queue.put("🔧 API transmission completed - preparing to show Flash New Device button")
-                        self.api_payload_sent = True  # Mark as sent
-                        
-                        # Debug: Check if flash_new_device_button exists and can be shown
-                        if hasattr(self, 'flash_new_device_button'):
-                            self.log_queue.put("🔍 DEBUG: flash_new_device_button exists")
-                            self.log_queue.put(f"🔍 DEBUG: Button packed status: {self.flash_new_device_button.winfo_ismapped()}")
-                            self.log_queue.put(f"🔍 DEBUG: Button visibility: {self.flash_new_device_button.winfo_viewable()}")
-                            
-                            # Show the Flash New Device button after successful API transmission
-                            self.log_queue.put("🔧 Scheduling Flash New Device button to appear in 2 seconds...")
-                            self.root.after(2000, self._show_flash_new_device_button)
-                        else:
-                            self.log_queue.put("❌ DEBUG: flash_new_device_button NOT FOUND")
-                    else:
-                        self.log_queue.put(f"❌ CRITICAL: Failed to send processed toy data to Bondu API")
-                        self.log_queue.put(f"❌ Error: {api_error_msg}")
-                        if api_full_error:
-                            self.log_queue.put(f"❌ Details: {api_full_error}")
-                elif self.api_payload_sent:
-                    self.log_queue.put("📡 API data already sent for this device, skipping duplicate transmission")
-                    api_success = True  # Don't block if already sent
-                else:
-                    self.log_queue.put("⚠️ Bondu API not available")
-                    api_success = True  # Don't block if API not available
-
-                # Send to Firebase as security backup (same processed data)
-                firebase_success = self.send_toy_data_to_firebase(
-                    toy_id=self.processed_toy_id,
-                    mac_address=self.physical_id.replace(':', '').lower(),
-                    test_data=test_data
-                )
-
-                if firebase_success:
-                    self.log_queue.put("🔒 Security backup completed - data sent to Firebase")
-                else:
-                    self.log_queue.put("⚠️ Security backup to Firebase failed")
-
-                # Determine final success based on API and Firebase
-                final_success = api_success  # API is critical for business
-
-            except Exception as e:
-                self.log_queue.put(f"⚠️ Error sending processed toy data: {e}")
-                api_success = False
-                api_error_msg = f"Exception: {str(e)}"
-                final_success = False
-
-        else:
-            # No toy data to send
-            final_success = True
-            api_success = True
-
-        # Handle API success/failure - block workflow if API fails
-        if api_success:
-            # API succeeded - show success and continue normally
-            self.log_queue.put("✅ API data transmission completed successfully")
-            # Show the Flash New Device button after successful QC + API transmission
-            if hasattr(self, 'flash_new_device_button'):
-                self.root.after(2000, lambda: self.flash_new_device_button.pack(after=self.test_details_label, pady=(10, 0)))
-        else:
-            # API FAILED - Show CRITICAL error and block workflow
-            self.log_queue.put("🚨 CRITICAL: API transmission failed - device workflow BLOCKED")
-            self.log_queue.put("🚨 Operators: Solve API issue before continuing")
-
-            # Show critical error message in main window
-            self.display_api_error(api_error_msg)
-
-            # DO NOT show "Flash New Device" button - workflow is blocked
-            # Operator must retry API transmission first
-            return  # Exit early - don't continue normal flow
-
-        # Only if API successful, we allow continuation regardless of QC results
-        # (the idea is that if API transmission succeeded, we can move to next device)
-        if final_success:
-            self.log_queue.put("🎉 DEVICE WORKFLOW COMPLETED - Ready for next device")  # Changed from "DEVICE APPROVED" to indicate more than just QC
-            # Ensure Flash New Device button is shown if not already shown due to timing
-            if hasattr(self, 'flash_new_device_button') and self.flash_new_device_button.winfo_ismapped() == 0:
-                self.root.after(1000, lambda: self.flash_new_device_button.pack(after=self.test_details_label, pady=(10, 0)))
-        else:
-            # Even if final success fails, try to show button as fallback if API succeeded but other parts failed
-            if api_success and hasattr(self, 'flash_new_device_button') and self.flash_new_device_button.winfo_ismapped() == 0:
-                self.log_queue.put("🔄 Attempting to show Flash New Device button as fallback...")
-                self.root.after(500, lambda: self.flash_new_device_button.pack(after=self.test_details_label, pady=(10, 0)))
 
     def initialize_firebase(self):
         self.log_queue.put(("Firebase", "Attempting to initialize Firebase..."))
@@ -1151,7 +1018,7 @@ class FlasherApp:
             print(f"[DEBUG] Test translation result: '{test_string}'")
 
             self.log_queue.put(f"🌐 Language changed to {lang_code} - refreshing all UI texts")
-            self.root.after(100, self.update_all_texts)  # Small delay to ensure language change propagates
+            self.root.after(100, lambda: self.update_all_widgets(self.root))  # Small delay to ensure language change propagates
         else:
             print(f"❌ [DEBUG] Failed to set language to: {lang_code}")
             self.log_queue.put(f"⚠️ Failed to change language to {lang_code}")
@@ -1293,7 +1160,7 @@ class FlasherApp:
         self.bluetooth_qc_manager.start_manual_bt_selection()
 
     def display_test_results(self, results):
-        """Display QC test results in main window and logs, then trigger next workflow step"""
+        """Display QC test results in main window and logs, then send to API and show button"""
         # Update main window display
         pass_count = sum(1 for r in results if r['status'] == 'pass')
         total_count = len(results)
@@ -1344,8 +1211,8 @@ class FlasherApp:
                     else:
                         balance_status = "Unbalanced ⚠️"
                     self.log_queue.put(f"Audio Balance: {balance_status}")
-                    self.log_queue.put(".1f")
-                    self.log_queue.put(".1f")
+                    self.log_queue.put(f"RMS L: {eval_data['rms_L']:.1f}")
+                    self.log_queue.put(f"RMS R: {eval_data['rms_R']:.1f}")
 
             self.log_queue.put("-" * 30)
 
@@ -1354,34 +1221,53 @@ class FlasherApp:
         if all_passed:
             self.log_queue.put("🎉 ALL TESTS PASSED - Device approved!")
 
-            # Send data to inventory API after successful QC - only if not already sent
+            # Send data to Bondu API after successful QC - only if not already sent
             toy_id_to_use = getattr(self, 'processed_toy_id', self.toy_id_var.get())
             if API_AVAILABLE and toy_id_to_use and self.physical_id and not self.api_payload_sent:
-                # Send logs instead of QC results to API
+                # Sanitize logs to avoid Unicode escape sequence errors
                 logs_content = "\n".join(self.session_logs)
+                
+                # Comprehensive sanitization to prevent JSON encoding issues
+                # 1. Replace all backslashes with forward slashes
+                logs_content = logs_content.replace('\\', '/')
+                # 2. Remove or replace other problematic characters
+                logs_content = logs_content.replace('\r', '')  # Remove carriage returns
+                logs_content = logs_content.replace('\t', '    ')  # Replace tabs with spaces
+                # 3. Remove control characters (ASCII 0-31 except newline)
+                logs_content = ''.join(char for char in logs_content if ord(char) >= 32 or char == '\n')
+                # 4. Encode to ASCII, replacing non-ASCII with '?'
+                logs_content = logs_content.encode('ascii', 'replace').decode('ascii')
+                # 5. Remove any remaining problematic escape sequences
+                logs_content = logs_content.replace('\\x', '_x')
+                logs_content = logs_content.replace('\\u', '_u')
 
-                success = send_to_bondu(
+                api_success, api_error_msg, api_full_error = send_to_bondu(
                     toy_id=toy_id_to_use,
-                    mac_address=self.physical_id.replace(':', '').lower(),  # Remove colons and ensure lowercase hex
+                    mac_address=self.physical_id.replace(':', '').lower(),
                     test_data={"logs": logs_content}
                 )
 
-                if success:
-                    self.log_queue.put("📡 Inventory data sent to API successfully")
-                    self.api_payload_sent = True  # Mark as sent
+                if api_success:
+                    self.log_queue.put("✅ Data sent to Bondu API successfully")
+                    self.api_payload_sent = True
+                    
+                    # Show Flash New Device button immediately after successful API transmission
+                    self.show_flash_new_device_button()
                 else:
-                    self.log_queue.put("⚠️ Failed to send inventory data to API (continuing workflow)")
+                    self.log_queue.put(f"❌ Failed to send data to Bondu API: {api_error_msg}")
+                    self.display_api_error(api_error_msg)
             elif self.api_payload_sent:
                 self.log_queue.put("📡 API data already sent for this device, skipping duplicate transmission")
+                # Still show button if already sent
+                self.show_flash_new_device_button()
 
             # Store structured session data after successful QC
-            toy_id_to_use = getattr(self, 'processed_toy_id', self.toy_id_var.get())
             if FIREBASE_AVAILABLE and toy_id_to_use and self.physical_id:
                 session_data = {
                     'toy_id': toy_id_to_use,
                     'physical_id': self.physical_id,
                     'qc_results': results,
-                    'session_start': time.time() - 600,  # Approximate session start (10 minutes ago)
+                    'session_start': time.time() - 600,
                     'session_end': time.time(),
                     'qc_passed': True,
                     'device_name': self.captured_ble_name or 'Unknown'
@@ -1391,9 +1277,6 @@ class FlasherApp:
                     self.log_queue.put("💾 Device session data stored in Firebase")
                 else:
                     self.log_queue.put("⚠️ Failed to store device session data")
-
-            # Show simplified results and Flash New Device button
-            self.root.after(2000, self.start_production_flash_after_qc)  # 2 second delay to show results
         else:
             self.log_queue.put("⚠️ SOME TESTS FAILED - Device requires attention")
             self.log_queue.put("🔧 Please check the microphones and readjust the plush's felt/fabric")
@@ -1496,19 +1379,19 @@ class FlasherApp:
 
         # Focus on the logs window
         logs_window.focus_set()
-    def _show_flash_new_device_button(self):
-        """Internal method to show the Flash New Device button with debugging."""
+    def show_flash_new_device_button(self):
+        """Show the Flash New Device button after successful QC and API transmission"""
         try:
             if hasattr(self, 'flash_new_device_button'):
-                self.log_queue.put("🔧 DEBUG: Attempting to show Flash New Device button...")
+                self.log_queue.put("🔧 Showing Flash New Device button...")
                 self.flash_new_device_button.pack(after=self.test_details_label, pady=(10, 0))
-                self.log_queue.put("✅ DEBUG: Flash New Device button should now be visible")
-                self.log_queue.put(f"🔍 DEBUG: Button is mapped: {self.flash_new_device_button.winfo_ismapped()}")
-                self.log_queue.put(f"🔍 DEBUG: Button is viewable: {self.flash_new_device_button.winfo_viewable()}")
+                self.log_queue.put("✅ Flash New Device button is now visible")
             else:
-                self.log_queue.put("❌ DEBUG: Cannot show button - flash_new_device_button attribute missing")
+                self.log_queue.put("❌ ERROR: flash_new_device_button not found")
         except Exception as e:
-            self.log_queue.put(f"❌ DEBUG: Error showing Flash New Device button: {e}")
+            self.log_queue.put(f"❌ ERROR showing Flash New Device button: {e}")
+
+    def update_all_widgets_text(self):
         """Update all interface texts after language change - TARGETED approach."""
         print("[TRANSLATION] Starting targeted UI text update...")
 
