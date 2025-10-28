@@ -1,13 +1,24 @@
---- Session Log Started: 2025-10-28 15:29:21 ---
+--- Session Log Started: 2025-10-28 15:40:09 ---
 
-('Firebase', '🚀 Starting DinoCore Production Flasher v1.2.14')
+('Firebase', '🚀 Starting DinoCore Production Flasher')
 ('Firebase', '📍 Working directory: C:\\Users\\deivi\\OneDrive\\Documents\\Dino\\try 6\\cleaned_gui_flasher')
 ('Firebase', '🐍 Python version: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]')
 ('Firebase', '⚠️ Firebase not available')
 🚀 Starting QR Scanner Workflow - Field ready for scanning!
 📱 Position QR scanner and scan toy code...
+🏠 User clicked 'Reset Workflow' - restarting from beginning...
+🔄 Reset API payload flag - ready to send data for new device
+🔄 Cleared BLE ready event
+🔄 Cleared session logs for new device
 📋 Input received: asdasd
 🆔 Processed Toy ID: asdasd
+✅ ESP32 detected on port COM21
+🏠 User clicked 'Reset Workflow' - restarting from beginning...
+🔄 Reset API payload flag - ready to send data for new device
+🔄 Cleared BLE ready event
+🔄 Cleared session logs for new device
+📋 Input received: asdasda
+🆔 Processed Toy ID: asdasda
 ✅ ESP32 detected on port COM21
 ✅ Device ready on port: COM21
 🎯 Using default hardware version: 1.9.1
@@ -17,7 +28,43 @@
 Attempting to burn eFuse with version 1.9.1...
 Attempting to burn eFuse with version 1.9.1...
 Attempting to reset device into download mode...
+🏠 User clicked 'Reset Workflow' - restarting from beginning...
+🔄 Reset API payload flag - ready to send data for new device
+🔄 Cleared BLE ready event
+🔄 Cleared session logs for new device
+📋 Input received: asasd
+🆔 Processed Toy ID: asasd
+✅ ESP32 detected on port COM21
+✅ Device ready on port: COM21
+🎯 Using default hardware version: 1.9.1
+✅ ESP32 detected on port COM21
+🚀 Auto-starting Testing & eFuse flash...
+--- Processing new device on COM21 ---
+Attempting to burn eFuse with version 1.9.1...
+Attempting to burn eFuse with version 1.9.1...
+Attempting to reset device into download mode...
+Device reset failed, but continuing with eFuse burning...
+Could not burn eFuse. It might be already written.
+eFuse burn error: 
+A fatal error occurred: Could not open COM21, the port is busy or doesn't exist.
+(could not open port 'COM21': PermissionError(13, 'Access is denied.', None, 5))
+
+Hint: Check if the port is not used by another task
+
+Please make sure you specified the right port with --port.
+Burn command failed. Attempting to read existing version...
+Attempting to read eFuse from COM21...
+[X] Failed to read eFuse. Maybe locked?
+[X] Could not read existing version after burn failure. Stopping.
+✅ ESP32 detected on port COM21
 Device reset error: Command '['C:\\Python312\\python.exe', '-m', 'esptool', '--chip', 'esp32s3', '-p', 'COM21', '--before=default_reset', '--after=hard_reset', 'chip_id']' timed out after 10 seconds, but continuing...
+🏠 User clicked 'Reset Workflow' - restarting from beginning...
+🔄 Reset API payload flag - ready to send data for new device
+🔄 Cleared BLE ready event
+🔄 Cleared session logs for new device
+🌐 Language changed to zh_CN - refreshing all UI texts
+🌐 Language changed to en - refreshing all UI texts
+🌐 Language changed to zh_CN - refreshing all UI texts
 Could not burn eFuse. It might be already written.
 eFuse burn error: Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
@@ -73,3 +120,6 @@ eFuse burn error: Traceback (most recent call last):
 serial.serialutil.SerialTimeoutException: Write timeout
 Burn command failed. Attempting to read existing version...
 Attempting to read eFuse from COM21...
+📋 Input received: asdasd
+🆔 Processed Toy ID: asdasd
+✅ ESP32 detected on port COM21

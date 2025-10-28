@@ -70,7 +70,7 @@ from .dialogs import VersionDialog
 class FlasherApp:
     def __init__(self, root):
         self.root = root
-        self.root.title(_("DinoCore Production Flasher v1.2.0"))
+        self.root.title(_("DinoCore Production Flasher"))
         self.root.geometry(f"{self.root.winfo_screenwidth()}x{self.root.winfo_screenheight()}+0+0")
         self.root.state('zoomed')  # Use zoomed instead of fullscreen to keep window borders
         self.root.resizable(True, True)
@@ -579,7 +579,7 @@ class FlasherApp:
         """Start comprehensive logging to Firebase for debugging."""
         try:
             # Send initial startup log
-            self.log_queue.put(("Firebase", "🚀 Starting DinoCore Production Flasher v1.2.14"))
+            self.log_queue.put(("Firebase", "🚀 Starting DinoCore Production Flasher"))
             self.log_queue.put(("Firebase", f"📍 Working directory: {os.getcwd()}"))
             self.log_queue.put(("Firebase", f"🐍 Python version: {sys.version}"))
 
@@ -620,9 +620,6 @@ class FlasherApp:
         # Just show the logo and version, no duplicate title text
         tk.Label(title_frame, text="🦖", font=("Segoe UI Emoji", 36), bg=self.colors['header_bg'], fg="#89dceb").pack(side=tk.LEFT, padx=(0, 5))
 
-        tk.Label(title_frame, text="v1.2.0", font=("Segoe UI", 10), bg=self.colors['header_bg'],
-                fg=self.colors['log_text']).pack(side=tk.LEFT, padx=(5, 0))
-
         # Language selection and manual mode buttons
         lang_frame = tk.Frame(header_content, bg=self.colors['header_bg'])
         lang_frame.pack(side=tk.RIGHT, padx=(20, 0))
@@ -655,6 +652,12 @@ class FlasherApp:
         # Main content area
         content_frame = tk.Frame(self.root, bg=self.colors['bg'])
         content_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
+
+        # Add Reset/Start Over button in header
+        self.reset_button = tk.Button(header_content, text="🏠", font=("Segoe UI Emoji", 14),
+                                     bg=self.colors['frame_bg'], fg=self.colors['text'], relief=tk.FLAT,
+                                     command=self.reset_workflow, padx=10, pady=5)
+        self.reset_button.pack(side=tk.RIGHT, padx=(0, 10))
 
         # Configuration section
         self.config_frame = tk.LabelFrame(content_frame, text=f" ⚙️ {_('Configuration')} ", font=("Segoe UI", 11, "bold"),
@@ -1064,7 +1067,7 @@ class FlasherApp:
             # Language set successfully - no debug print
 
             # Verify global _ function works
-            test_string = _("DinoCore Production Flasher v1.2.0")
+            test_string = _("DinoCore Production Flasher")
             print(f"[DEBUG] Test translation result: '{test_string}'")
 
             self.log_queue.put(f"🌐 Language changed to {lang_code} - refreshing all UI texts")
@@ -1346,6 +1349,70 @@ class FlasherApp:
 
         return all_passed
 
+    def reset_workflow(self):
+        """Reset the entire workflow to start from the beginning"""
+        self.log_queue.put("🏠 User clicked 'Reset Workflow' - restarting from beginning...")
+
+        # Hide the Flash New Device button if visible
+        if hasattr(self, 'flash_new_device_button') and self.flash_new_device_button.winfo_ismapped():
+            self.flash_new_device_button.pack_forget()
+
+        # Hide Try Again button if visible
+        if hasattr(self, 'try_again_button') and self.try_again_button.winfo_ismapped():
+            self.try_again_button.pack_forget()
+
+        # Hide API error frame if visible
+        if hasattr(self, 'api_error_frame') and self.api_error_frame.winfo_ismapped():
+            self.api_error_frame.pack_forget()
+
+        # Reset workflow state
+        self.workflow_step = 0
+        self.physical_id = None
+        self.captured_ble_name = None
+        self.toy_id_var.set("")
+        
+        # CRITICAL: Reset API payload flag to allow sending data for new device
+        self.api_payload_sent = False
+        self.log_queue.put("🔄 Reset API payload flag - ready to send data for new device")
+
+        # Clear BLE ready event
+        self.ble_ready_event.clear()
+        self.log_queue.put("🔄 Cleared BLE ready event")
+
+        # Clear session logs for new device
+        self.session_logs = []
+        self.log_queue.put("🔄 Cleared session logs for new device")
+
+        # Clear test results
+        self.test_result_label.config(text="⏳ Waiting for test results...",
+                                    fg=self.colors['log_text'], font=("Segoe UI", 20, "bold"))
+        self.test_details_label.config(text="", fg=self.colors['text'])
+
+        # Hide test results frame
+        if hasattr(self, 'results_frame'):
+            self.results_frame.pack_forget()
+
+        # Reset progress bar
+        self.reset_progress_bar()
+
+        # Reset button states
+        if hasattr(self, 'bt_qc_button'):
+            self.bt_qc_button.config(state='disabled')
+        if hasattr(self, 'prod_button'):
+            self.prod_button.config(state='disabled')
+        if hasattr(self, 'test_button'):
+            self.test_button.config(state='disabled')
+
+        # If we're in the toy ID input or connection phases, hide those frames
+        if hasattr(self, 'toy_id_frame') and self.toy_id_frame.winfo_ismapped():
+            self.toy_id_frame.pack_forget()
+        if hasattr(self, 'connection_frame') and self.connection_frame.winfo_ismapped():
+            self.connection_frame.pack_forget()
+
+        # Reset the UI to show only toy ID input (the starting point)
+        self.hide_all_ui_elements()
+        self.root.after(200, self.ask_toy_id)
+
     def flash_new_device(self):
         """Reset the workflow to flash a new device"""
         self.log_queue.put("🆕 User clicked 'Flash New Device' - resetting workflow...")
@@ -1499,7 +1566,7 @@ class FlasherApp:
 
         try:
             # Update window title
-            self.root.title(_("DinoCore Production Flasher v1.2.0"))
+            self.root.title(_("DinoCore Production Flasher"))
             print("[TRANSLATION] Window title updated")
 
             # Update status label
