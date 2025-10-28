@@ -145,6 +145,8 @@ class FlasherApp:
         
         self.log_queue = queue.Queue()
         self.scanner_stop_event = threading.Event()
+        self.monitor_stop_event = None  # Track serial monitor stop event
+        self.monitor_thread = None  # Track serial monitor thread
         
         # Initialize Bluetooth QC Manager
         self.bluetooth_qc_manager = BluetoothQCManager(self.log_queue, self, get_bluetooth_qc_tester if get_bluetooth_qc_tester else None, BLEAK_AVAILABLE)
@@ -495,6 +497,24 @@ class FlasherApp:
             self.start_flashing('testing')
         else:
             self.log_queue.put("⚠️ Testing & eFuse button not ready yet")
+
+    def auto_start_production_flash(self):
+        """Automatically start production flash after successful QC"""
+        self.log_queue.put("🏭 Initiating automatic production flash...")
+        
+        # Update UI to show production flash is starting
+        self.status_label.config(text="🏭 Starting Production Flash...", bg=self.colors['status_prod'])
+        self.test_result_label.config(text="⏳ Flashing Production Firmware...",
+                                    fg=self.colors['log_text'], font=("Segoe UI", 16, "bold"))
+        self.test_details_label.config(text="Please wait while production firmware is being flashed to the device...",
+                                     fg=self.colors['log_text'])
+        
+        # Reset progress bar for production flash
+        self.reset_progress_bar()
+        
+        # Start production flash with skip_efuse_read=True since we already verified it
+        # and show_new_device_button=True to show the button after completion
+        self.start_flashing('production', auto_start=True, show_new_device_button=True, skip_efuse_read=True)
 
     def auto_start_bluetooth_qc_after_flash(self):
         """Automatically start Bluetooth QC 8 seconds after flash completes"""
@@ -918,10 +938,24 @@ class FlasherApp:
 
         self.root.after(100, self.update_log)
 
+    def stop_serial_monitor(self):
+        """Stop the serial monitor if it's running"""
+        if self.monitor_stop_event is not None:
+            self.log_queue.put("🔌 Closing serial monitor to free port...")
+            self.monitor_stop_event.set()
+            # Wait a bit for the monitor to close
+            time.sleep(1)
+            self.monitor_stop_event = None
+            self.monitor_thread = None
+            self.log_queue.put("✅ Serial monitor closed successfully")
+
     def start_flashing(self, operation, auto_start=False, show_new_device_button=False, skip_efuse_read=False):
         if not self.esp32_port:
             messagebox.showerror(_("Error"), _("No ESP32 device detected."))
             return
+
+        # Stop serial monitor before flashing to free the port
+        self.stop_serial_monitor()
 
         # No confirmation dialogs - just start flashing immediately
         if operation == 'production':
@@ -1251,15 +1285,17 @@ class FlasherApp:
                     self.log_queue.put("✅ Data sent to Bondu API successfully")
                     self.api_payload_sent = True
                     
-                    # Show Flash New Device button immediately after successful API transmission
-                    self.show_flash_new_device_button()
+                    # Auto-start production flash after successful QC and API transmission
+                    self.log_queue.put("🚀 Starting automatic production flash after successful QC...")
+                    self.root.after(2000, self.auto_start_production_flash)
                 else:
                     self.log_queue.put(f"❌ Failed to send data to Bondu API: {api_error_msg}")
                     self.display_api_error(api_error_msg)
             elif self.api_payload_sent:
                 self.log_queue.put("📡 API data already sent for this device, skipping duplicate transmission")
-                # Still show button if already sent
-                self.show_flash_new_device_button()
+                # Auto-start production flash if API already sent
+                self.log_queue.put("🚀 Starting automatic production flash after successful QC...")
+                self.root.after(2000, self.auto_start_production_flash)
 
             # Store structured session data after successful QC
             if FIREBASE_AVAILABLE and toy_id_to_use and self.physical_id:
@@ -1302,19 +1338,47 @@ class FlasherApp:
         if hasattr(self, 'flash_new_device_button'):
             self.flash_new_device_button.pack_forget()
 
+        # Hide Try Again button if visible
+        if hasattr(self, 'try_again_button'):
+            self.try_again_button.pack_forget()
+
         # Reset workflow state
         self.workflow_step = 0
         self.physical_id = None
         self.captured_ble_name = None
         self.toy_id_var.set("")
+        
+        # CRITICAL: Reset API payload flag to allow sending data for new device
+        self.api_payload_sent = False
+        self.log_queue.put("🔄 Reset API payload flag - ready to send data for new device")
+
+        # Clear BLE ready event
+        self.ble_ready_event.clear()
+        self.log_queue.put("🔄 Cleared BLE ready event")
+
+        # Clear session logs for new device
+        self.session_logs = []
+        self.log_queue.put("🔄 Cleared session logs for new device")
 
         # Clear test results
         self.test_result_label.config(text="⏳ Waiting for test results...",
                                     fg=self.colors['log_text'], font=("Segoe UI", 20, "bold"))
         self.test_details_label.config(text="", fg=self.colors['text'])
 
+        # Hide test results frame
+        if hasattr(self, 'results_frame'):
+            self.results_frame.pack_forget()
+
         # Reset progress bar for next device
         self.reset_progress_bar()
+
+        # Reset button states
+        if hasattr(self, 'bt_qc_button'):
+            self.bt_qc_button.config(state='disabled')
+        if hasattr(self, 'prod_button'):
+            self.prod_button.config(state='disabled')
+        if hasattr(self, 'test_button'):
+            self.test_button.config(state='disabled')
 
         # Hide all UI elements and restart workflow
         self.hide_all_ui_elements()

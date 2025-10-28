@@ -138,7 +138,12 @@ def process_device_thread(log_queue, port, mode, stop_event, target_hw_version, 
                 flash_result['success'] = True
                 # Create a new stop event for the serial monitor thread
                 monitor_stop_event = threading.Event()
-                serial_monitor_thread(log_queue, port, monitor_stop_event, app_instance)
+                # Store the monitor stop event in the app instance so it can be stopped later
+                app_instance.monitor_stop_event = monitor_stop_event
+                # Start the serial monitor thread
+                monitor_thread = threading.Thread(target=serial_monitor_thread, args=(log_queue, port, monitor_stop_event, app_instance), daemon=True)
+                app_instance.monitor_thread = monitor_thread
+                monitor_thread.start()
             else:
                 log_queue.put("[X] Flash failed. Unable to complete device programming.")
                 flash_result['error'] = "Flash process failed"
