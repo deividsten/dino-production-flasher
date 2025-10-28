@@ -20,9 +20,14 @@ class LogViewer(tk.Frame):
                                   insertbackground=colors['text'])
         self.text_widget.pack(side="left", fill="both", expand=True)
 
-        # Make it read-only but selectable
-        self.text_widget.bind("<Key>", lambda e: "break")  # Disable keyboard input
+        # Make it read-only but selectable, add copy functionality
+        self.text_widget.bind("<Key>", self._on_key_press)  # Handle key events for copy
         self.text_widget.bind("<Button-1>", self._allow_select)  # Allow mouse selection
+
+        # Add context menu for copy functionality
+        self.context_menu = tk.Menu(self, tearoff=0)
+        self.context_menu.add_command(label="Copy", command=self._copy_selection)
+        self.text_widget.bind("<Button-3>", self._show_context_menu)  # Right-click for context menu
 
         self.scrollbar = tk.Scrollbar(self, orient="vertical", command=self.text_widget.yview)
         self.scrollbar.pack(side="right", fill="y")
@@ -41,10 +46,38 @@ class LogViewer(tk.Frame):
         self.last_progress_line = None
         self.last_any_line = None  # Track any line separately
 
+    def _on_key_press(self, event):
+        """Handle key presses including copy functionality"""
+        # Allow Ctrl+C for copying selected text
+        if event.state == 4 and event.keysym.lower() == 'c':  # Ctrl+C
+            self._copy_selection()
+            return "break"  # Prevent further processing
+        # Disable all other keyboard input to make it read-only
+        return "break"
+
     def _allow_select(self, event):
         """Allow text selection but prevent editing"""
         # Allow normal selection behavior
-        return None
+        pass
+
+    def _show_context_menu(self, event):
+        """Show the context menu on right-click"""
+        try:
+            self.context_menu.tk_popup(event.x_root, event.y_root)
+        finally:
+            self.context_menu.grab_release()
+
+    def _copy_selection(self):
+        """Copy selected text to clipboard"""
+        try:
+            selected_text = self.text_widget.get(tk.SEL_FIRST, tk.SEL_LAST)
+            self.clipboard_clear()
+            self.clipboard_append(selected_text)
+        except tk.TclError:
+            # No text selected, copy everything
+            all_text = self.text_widget.get("1.0", tk.END)
+            self.clipboard_clear()
+            self.clipboard_append(all_text)
 
     def add_log_entry(self, message, icon=None, tag="info"):
         """Add a new log entry to the text widget"""

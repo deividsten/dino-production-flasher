@@ -812,6 +812,9 @@ class FlasherApp:
 
         # Create a single log_views dict with a default entry
         self.log_views = {"USB/Serial": self.log_viewer, "Bluetooth": self.log_viewer, "Firebase": self.log_viewer}
+        
+        # Initialize list for additional log viewers (e.g., from separate windows)
+        self.additional_log_viewers = []
 
         # Start connection monitoring and set initial UI state
         self.update_connection_status()
@@ -905,6 +908,10 @@ class FlasherApp:
                     if "Flashing..." in message and "%" in message:
                         log_view = self.log_views[tab_name]
                         log_view.update_last_line(message)
+                        # Also update additional log viewers
+                        if hasattr(self, 'additional_log_viewers'):
+                            for viewer in self.additional_log_viewers:
+                                viewer.update_last_line(message)
                         continue # Skip normal logging for progress updates
             
             message_str = str(message)
@@ -918,6 +925,10 @@ class FlasherApp:
             # Special handling for single-line progress updates
             if "Flashing..." in message_str and "%" in message_str:
                 log_view.update_last_line(message_str)
+                # Also update additional log viewers
+                if hasattr(self, 'additional_log_viewers'):
+                    for viewer in self.additional_log_viewers:
+                        viewer.update_last_line(message_str)
             else:
                 # Determine icon for new log entries
                 icon = self.icons['info']
@@ -935,6 +946,11 @@ class FlasherApp:
                     icon = self.icons['flash']
                 
                 log_view.add_log_entry(message_str, icon)
+                
+                # Also add to additional log viewers
+                if hasattr(self, 'additional_log_viewers'):
+                    for viewer in self.additional_log_viewers:
+                        viewer.add_log_entry(message_str, icon)
 
         self.root.after(100, self.update_log)
 
@@ -1437,12 +1453,26 @@ class FlasherApp:
                 if line.strip():  # Only add non-empty lines
                     logs_viewer.add_log_entry(line.strip())
 
+        # Store reference to the new log viewer so we can update it with new logs
+        if not hasattr(self, 'additional_log_viewers'):
+            self.additional_log_viewers = []
+        self.additional_log_viewers.append(logs_viewer)
+
         # Make the window modal (blocks interaction with main window)
         logs_window.transient(self.root)
         logs_window.grab_set()
 
         # Focus on the logs window
         logs_window.focus_set()
+        
+        # Handle window close event to remove reference
+        logs_window.protocol("WM_DELETE_WINDOW", lambda: self._close_logs_window(logs_window, logs_viewer))
+
+    def _close_logs_window(self, window, logs_viewer):
+        """Handle closing of logs window"""
+        if hasattr(self, 'additional_log_viewers') and logs_viewer in self.additional_log_viewers:
+            self.additional_log_viewers.remove(logs_viewer)
+        window.destroy()
     def show_flash_new_device_button(self):
         """Show the Flash New Device button after successful QC and API transmission"""
         try:
