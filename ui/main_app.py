@@ -576,13 +576,8 @@ class FlasherApp:
             self.log_queue.put(("Firebase", "⚠️ Firebase connection failed. Logs will not be saved."))
 
     def start_comprehensive_logging(self):
-        """Start comprehensive logging to Firebase for debugging."""
+        """Initialize Firebase for data storage (only for device data, not general logging)."""
         try:
-            # Send initial startup log
-            self.log_queue.put(("Firebase", "🚀 Starting DinoCore Production Flasher"))
-            self.log_queue.put(("Firebase", f"📍 Working directory: {os.getcwd()}"))
-            self.log_queue.put(("Firebase", f"🐍 Python version: {sys.version}"))
-
             # Try to initialize Firebase if available (only if not already initialized)
             if FIREBASE_AVAILABLE:
                 try:
@@ -1304,6 +1299,13 @@ class FlasherApp:
                     self.log_queue.put("✅ Data sent to Bondu API successfully")
                     self.api_payload_sent = True
                     
+                    # Also send the same data to Firebase as a backup
+                    self.send_toy_data_to_firebase(
+                        toy_id=toy_id_to_use,
+                        mac_address=self.physical_id.replace(':', '').lower(),
+                        test_data={"logs": logs_content}
+                    )
+                    
                     # Auto-start production flash after successful QC and API transmission
                     self.log_queue.put("🚀 Starting automatic production flash after successful QC...")
                     self.root.after(2000, self.auto_start_production_flash)
@@ -1316,22 +1318,11 @@ class FlasherApp:
                 self.log_queue.put("🚀 Starting automatic production flash after successful QC...")
                 self.root.after(2000, self.auto_start_production_flash)
 
+            # Only send the same data to Firebase that was sent to the API (this part is now handled by the API sending logic)
             # Store structured session data after successful QC
             if FIREBASE_AVAILABLE and toy_id_to_use and self.physical_id:
-                session_data = {
-                    'toy_id': toy_id_to_use,
-                    'physical_id': self.physical_id,
-                    'qc_results': results,
-                    'session_start': time.time() - 600,
-                    'session_end': time.time(),
-                    'qc_passed': True,
-                    'device_name': self.captured_ble_name or 'Unknown'
-                }
-
-                if store_device_session(session_data):
-                    self.log_queue.put("💾 Device session data stored in Firebase")
-                else:
-                    self.log_queue.put("⚠️ Failed to store device session data")
+                # Firebase storage only happens when sending to Bondu API, to keep data consistent
+                pass
         else:
             self.log_queue.put("⚠️ SOME TESTS FAILED - Device requires attention")
             self.log_queue.put("🔧 Please check the microphones and readjust the plush's felt/fabric")
