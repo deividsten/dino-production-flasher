@@ -136,6 +136,7 @@ class FlasherApp:
         
         self.hw_version_var = tk.StringVar()
         self.toy_id_var = tk.StringVar()
+        self.selected_color = None  # Store selected dino color
         self.captured_ble_name = None
         self.physical_id = None
         self.session_logs = []
@@ -357,7 +358,7 @@ class FlasherApp:
             _("1. Connect the Dino device to the computer via USB"),
             _("2. Place the Dino inside the testing box"),
             _("3. Make sure the device is powered on"),
-            _("4. Wait for the device to be detected")
+            _("4. Select the color of your Dino from the options below")
         ]
 
         instructions_text = "\n".join(instructions)
@@ -367,19 +368,39 @@ class FlasherApp:
         self.instructions_label.pack(anchor="w", pady=(10, 15))
 
         # Status
-        self.connection_status_label = tk.Label(connection_inner, text="⏳ Waiting for device...",
+        self.connection_status_label = tk.Label(connection_inner, text="🎨 Select your Dino's color...",
                                                font=("Segoe UI", 18, "bold"), bg=self.colors['frame_bg'],
                                                fg=self.colors['log_text'])
         self.connection_status_label.pack(anchor="w", pady=(0, 10))
 
-        # Button frame
-        button_frame = tk.Frame(connection_inner, bg=self.colors['frame_bg'])
-        button_frame.pack(fill=tk.X)
+        # Color selection buttons frame
+        color_frame = tk.Frame(connection_inner, bg=self.colors['frame_bg'])
+        color_frame.pack(fill=tk.X, pady=(10, 0))
 
-        self.connection_ok_button = tk.Button(button_frame, text=_("✅ Device Ready"), font=("Segoe UI", 24, "bold"),
-                                             bg=self.colors['success_btn'], fg=self.colors['bg'],
-                                             command=self.on_connection_ok, relief=tk.FLAT, padx=40, pady=15)
-        self.connection_ok_button.pack(side=tk.RIGHT)
+        # Create color selection buttons
+        color_button_config = {
+            'font': ("Segoe UI", 18, "bold"),
+            'relief': tk.FLAT,
+            'borderwidth': 0,
+            'pady': 15
+        }
+
+        # Create color selection buttons
+        self.color1_button = tk.Button(color_frame, text=_("Color 1"), bg="#fde3e3", fg=self.colors['bg'],
+                                       command=lambda: self.select_color("#fde3e3"), **color_button_config)
+        self.color1_button.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 5))
+
+        self.color2_button = tk.Button(color_frame, text=_("Color 2"), bg="#4c2ff7", fg=self.colors['bg'],
+                                       command=lambda: self.select_color("#4c2ff7"), **color_button_config)
+        self.color2_button.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(2.5, 2.5))
+
+        self.color3_button = tk.Button(color_frame, text=_("Color 3"), bg="#45ffe7", fg=self.colors['bg'],
+                                       command=lambda: self.select_color("#45ffe7"), **color_button_config)
+        self.color3_button.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(2.5, 2.5))
+
+        self.color4_button = tk.Button(color_frame, text=_("Color 4"), bg="#fe6f29", fg=self.colors['bg'],
+                                       command=lambda: self.select_color("#fe6f29"), **color_button_config)
+        self.color4_button.pack(side=tk.RIGHT, fill=tk.X, expand=True, padx=(5, 0))
 
         # Start device detection
         self.start_device_detection()
@@ -390,8 +411,12 @@ class FlasherApp:
         detector_thread = threading.Thread(target=self.device_detector_worker, daemon=True)
         detector_thread.start()
 
-    def on_connection_ok(self):
-        """Handle connection OK button"""
+    def select_color(self, color_code):
+        """Handle color selection button"""
+        self.selected_color = color_code
+        self.log_queue.put(f"🎨 Dino color selected: {color_code}")
+
+        # Validate that device is connected
         if not self.esp32_port:
             messagebox.showerror("Error", "No ESP32 device detected. Please make sure the device is connected and powered on.")
             return

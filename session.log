@@ -1,31 +1,33 @@
---- Session Log Started: 2025-10-28 15:46:36 ---
+--- Session Log Started: 2025-10-28 16:53:39 ---
 
 ('Firebase', '⚠️ Firebase not available')
 🚀 Starting QR Scanner Workflow - Field ready for scanning!
 📱 Position QR scanner and scan toy code...
-🔧 Toy ID parsed from Bondu URL: 'https://bondu.com/toy/2jmmkb' -> 'toy_2jmmkb'
-📋 Input received: https://bondu.com/toy/2jmmkb
-🆔 Processed Toy ID: toy_2jmmkb
-✅ ESP32 detected on port COM30
-✅ ESP32 detected on port COM30
-✅ Device ready on port: COM30
+🔧 Toy ID parsed from Bondu URL: 'https://bondu.com/toy/hha2ck' -> 'toy_hha2ck'
+📋 Input received: https://bondu.com/toy/hha2ck
+🆔 Processed Toy ID: toy_hha2ck
+🎨 Dino color selected: #fde3e3
+✅ ESP32 detected on port COM31
+✅ ESP32 detected on port COM31
+🎨 Dino color selected: #fde3e3
+✅ Device ready on port: COM31
 🎯 Using default hardware version: 1.9.1
-✅ ESP32 detected on port COM30
+✅ ESP32 detected on port COM31
 🚀 Auto-starting Testing & eFuse flash...
---- Processing new device on COM30 ---
+--- Processing new device on COM31 ---
 Attempting to burn eFuse with version 1.9.1...
 Attempting to burn eFuse with version 1.9.1...
 Attempting to reset device into download mode...
 Device reset successful, proceeding with eFuse burning...
 [OK] eFuse burned successfully.
 Burn command succeeded. Verifying by reading back eFuse...
-Attempting to read eFuse from COM30...
+Attempting to read eFuse from COM31...
 [OK] Found raw eFuse version: 1.9.1
 [OK] Verification successful. Version 1.9.1 is burned.
 eFuse burning completed successfully. Starting firmware flash...
--- Starting testing flash for HW 1.9.1 on COM30 --
+-- Starting testing flash for HW 1.9.1 on COM31 --
 ('show_progress',)
--- Starting testing flash for HW 1.9.1 on COM30 --
+-- Starting testing flash for HW 1.9.1 on COM31 --
 Downloading testing firmware for HW 1.9.1...
 Found compatible build: qc
 Downloading bootloader.bin...
@@ -40,14 +42,14 @@ Warning: Deprecated: Choice 'default_reset' for option '--before' is deprecated.
 Warning: Deprecated: Choice 'hard_reset' for option '--after' is deprecated. Use 'hard-reset' instead.
 Warning: Deprecated: Command 'write_flash' is deprecated. Use 'write-flash' instead.
 esptool v5.1.0
-Serial port COM30:
-Connecting...
-Connected to ESP32-S3 on COM30:
+Serial port COM31:
+Connecting....
+Connected to ESP32-S3 on COM31:
 Chip type:          ESP32-S3 (QFN56) (revision v0.2)
 Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
 Crystal frequency:  40MHz
 USB mode:           USB-Serial/JTAG
-MAC:                8c:bf:ea:84:37:a8
+MAC:                8c:bf:ea:85:39:8c
 
 Uploading stub flasher...
 Running stub flasher...
@@ -66,7 +68,7 @@ Compressed 20976 bytes to 13360...
 ('progress_update', 'Flashing... 0.0%')
 
 ('progress_update', 'Flashing... 100.0%')
-Wrote 20976 bytes (13360 compressed) at 0x00000000 in 0.2 seconds (1067.0 kbit/s).
+Wrote 20976 bytes (13360 compressed) at 0x00000000 in 0.2 seconds (1081.7 kbit/s).
 Hash of data verified.
 Compressed 1681376 bytes to 1014463...
 
@@ -258,30 +260,30 @@ Compressed 1681376 bytes to 1014463...
 
 ('progress_update', 'Flashing... 100.0%')
 ('progress', 100)
-Wrote 1681376 bytes (1014463 compressed) at 0x00260000 in 8.4 seconds (1597.3 kbit/s).
+Wrote 1681376 bytes (1014463 compressed) at 0x00260000 in 8.6 seconds (1558.4 kbit/s).
 Hash of data verified.
 Compressed 3072 bytes to 176...
 
 ('progress_update', 'Flashing... 0.0%')
 
 ('progress_update', 'Flashing... 100.0%')
-Wrote 3072 bytes (176 compressed) at 0x00010000 in 0.0 seconds (1808.8 kbit/s).
+Wrote 3072 bytes (176 compressed) at 0x00010000 in 0.0 seconds (1887.7 kbit/s).
 Hash of data verified.
 Compressed 8192 bytes to 31...
 
 ('progress_update', 'Flashing... 0.0%')
 
 ('progress_update', 'Flashing... 100.0%')
-Wrote 8192 bytes (31 compressed) at 0x00015000 in 0.0 seconds (2698.5 kbit/s).
+Wrote 8192 bytes (31 compressed) at 0x00015000 in 0.0 seconds (2127.2 kbit/s).
 Hash of data verified.
 
 Hard resetting via RTS pin...
 [OK] Flash successful!
 ('hide_progress',)
--- Finished flashing COM30 --
+-- Finished flashing COM31 --
 Flash completed successfully. Starting serial monitor...
---- Serial monitor started for COM30 ---
-✅ ESP32 detected on port COM30
+--- Serial monitor started for COM31 ---
+✅ ESP32 detected on port COM31
 I (103) esp_image: segment 2: paddr=002c0020 vaddr=42000020 sizeI (805) esp_psram: SPI SRAM memory test OK
 I (813) cpu_start: Pro cpu start user code
 I (813) cpu_start: cpu freq: 240000000 Hz
@@ -291,11 +293,11 @@ I (814) app_init: App version:      0.1.2-dev
 I (814) app_init: Compile time:     Sep  5 2025 13:46:33
 I (814) app_init: ELF file SHA256:  e685db1b8...
 I (814) app_init: ESP-IDF:          v5.4.1
-I (815) efuse_init: Min chip rev:     v0.0
+I (814) efuse_init: Min chip rev:     v0.0
 I (815) efuse_init: Max chip rev:     v0.99
 I (815) efuse_init: Chip rev:         v0.2
 I (815) heap_init: Initializing. RAM available for dynamic allocation:
-I (816) heap_init: At 3FCB24C8 len 00037248 (220 KiB): RAM
+I (815) heap_init: At 3FCB24C8 len 00037248 (220 KiB): RAM
 I (816) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
 I (816) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
 I (816) heap_init: At 600FE120 len 00001EC8 (7 KiB): RTCRAM
@@ -304,7 +306,7 @@ I (1045) spi_flash: detected chip: generic
 I (1045) spi_flash: flash io: dio
 I (1046) sleep_gpio: Configure to isolate all GPIO pins in sleep state
 I (1046) sleep_gpio: Enable automatic switching of GPIO sleep configuration
-I (1047) coexist: coex firmware version: e727207
+I (1046) coexist: coex firmware version: e727207
 I (1047) coexist: coexist rom version e7ae62f
 I (1048) main_task: Started on CPU0
 I (1058) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
@@ -358,8 +360,8 @@ I (1388) BATTERY_MONITOR: ✅ SOC alert configured: Min=1%, Max=disabled
 I (1388) BATTERY_MONITOR: ✅ MAX17055 SOC alerts enabled - will trigger at 1% SOC
 I (1388) BATTERY_MONITOR: Battery monitoring system initialized successfully
 I (1388) recording_mode: 🔋 Checking critical battery protection...
-I (1388) recording_mode: 🔋 Battery voltage: 3.391 V
-I (1388) recording_mode: ✅ Battery voltage OK: 3.391 V >= 2.3V
+I (1388) recording_mode: 🔋 Battery voltage: 3.380 V
+I (1388) recording_mode: ✅ Battery voltage OK: 3.380 V >= 2.3V
 I (1388) BATTERY_MONITOR: Battery monitoring task started successfully
 I (1388) BATTERY_MONITOR: Battery monitoring task started
 I (1388) recording_mode: 🔋 Battery monitoring task started
@@ -376,48 +378,48 @@ I (1398) neopixel: Stopping any running LED animation
 I (1398) neopixel: LED animation stopped
 I (1398) led_manager: LED manager initialized successfully (hardware available: YES)
 I (1398) recording_mode: USB_SENSE (GPIO6) is HIGH
-I (1398) BATTERY_MONITOR: 🔍 Coulomb SoC calc: REG_QH=0x01F1 → 248.5 mAh → 4.1% SoC
+I (1398) BATTERY_MONITOR: 🔍 Coulomb SoC calc: REG_QH=0x0573 → 697.5 mAh → 11.6% SoC
 I (1398) recording_mode: 🔄 Creating button processing task...
 I (1398) BATTERY_MONITOR: === BATTERY STATUS ===
 I (1398) recording_mode: 🔄 Button processing task started
 I (1398) recording_mode: Audio test disabled; skipping record/playback loop
 I (1398) BATTERY_MONITOR: Present:     YES
 I (1398) MFG_WIFI: 🔊 WiFi test disabled - initializing Bluetooth immediately...
-I (1398) BATTERY_MONITOR: Voltage:     3.391 V
+I (1398) BATTERY_MONITOR: Voltage:     3.380 V
 I (1398) BATTERY_MONITOR: USB Power:   DETECTED
 I (1398) BLE_INIT: BT controller compile version [d74042a]
 I (1398) BATTERY_MONITOR: Charge IC:   CHARGING IN PROGRESS (STAT1=1, STAT2=0)
-I (1398) BATTERY_MONITOR: Current:     575.2 mA
-I (1398) BATTERY_MONITOR: Avg Current: 599.2 mA
-I (1398) BATTERY_MONITOR: SOC:         4.1%
-I (1398) BATTERY_MONITOR: Temperature: 30.6°C
-I (1398) BATTERY_MONITOR: Cycles:      8
-I (1398) BLE_INIT: Bluetooth MAC: 8c:bf:ea:84:37:aa
-📱 Captured Bluetooth MAC: 8C:BF:EA:84:37:AA
+I (1398) BATTERY_MONITOR: Current:     599.7 mA
+I (1398) BATTERY_MONITOR: Avg Current: 579.8 mA
+I (1398) BATTERY_MONITOR: SOC:         11.6%
+I (1398) BATTERY_MONITOR: Temperature: 28.0°C
+I (1398) BATTERY_MONITOR: Cycles:      11
+I (1398) BLE_INIT: Bluetooth MAC: 8c:bf:ea:85:39:8e
+📱 Captured Bluetooth MAC: 8C:BF:EA:85:39:8E
 I (1398) BATTERY_MONITOR: Charging:    YES
 I (1398) BATTERY_MONITOR: Session:     #0
 I (1398) BATTERY_MONITOR: ======================
-I (1398) BATTERY_MONITOR: 🔋 Battery is charging (575.2 mA)
+I (1398) BATTERY_MONITOR: 🔋 Battery is charging (599.7 mA)
 I (1398) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11
 W (1398) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration
 I (1428) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)
 I (1458) BLE_HANDLER: Bluetooth LE initialized successfully
-I (1458) device_utils: Device ID initialized: 8cbfea8437a8
-I (1458) device_utils: MAC Address: 8C:BF:EA:84:37:A8
+I (1458) device_utils: Device ID initialized: 8cbfea85398c
+I (1458) device_utils: MAC Address: 8C:BF:EA:85:39:8C
 I (1458) BLE_HANDLER: === CONFIGURING BLE ADVERTISING ===
-I (1458) BLE_HANDLER: Setting device name to: Toy-37A8
-📱 Captured Bluetooth Name: Toy-37A8
+I (1458) BLE_HANDLER: Setting device name to: Toy-398C
+📱 Captured Bluetooth Name: Toy-398C
 I (1458) BLE_HANDLER: BLE Advertising Configuration:
 I (1458) BLE_HANDLER: 📡 Service UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
-I (1458) BLE_HANDLER: 📱 Device Name: Toy-37A8 (in scan response)
+I (1458) BLE_HANDLER: 📱 Device Name: Toy-398C (in scan response)
 I (1458) BLE_HANDLER: ⏱️  Advertising Interval: 32 - 64 (0.625ms units)
 I (1458) BLE_HANDLER: 🔍 Discoverable: YES (General Discoverable)
 I (1458) BLE_HANDLER: 📶 TX Power: Included in scan response
 I (1458) BLE_HANDLER: Service UUID bytes (little-endian):
 I (1458) BLE_HANDLER: cd e8 e7 fb f1 16 0d 94 4e 47 5b ad ca 98 74 a0
-I (1458) BLE_HANDLER: 🚀 Starting BLE advertising process for device: Toy-37A8
+I (1458) BLE_HANDLER: 🚀 Starting BLE advertising process for device: Toy-398C
 I (1458) BLE_HANDLER: React Native app should look for service UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
-I (1458) MFG_WIFI: 🔊 Bluetooth initialized and advertising as: Toy-37A8
+I (1458) MFG_WIFI: 🔊 Bluetooth initialized and advertising as: Toy-398C
 I (1458) recording_mode: ✅ System initialization complete - main thread exiting cleanly
 I (1458) main_task: Returned from app_main()
 I (1468) BLE_HANDLER: GAP event: 14
@@ -452,7 +454,7 @@ I (1488) BLE_HANDLER: Characteristic added successfully, char_handle: 57
 I (1488) BLE_HANDLER: Connection status changed to: ADVERTISING
 I (1488) BLE_HANDLER: ✓ BLE advertising started with optimized configuration
 I (1488) BLE_HANDLER: ✓ Service UUID in advertising data: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
-I (1488) BLE_HANDLER: ✓ Device name in scan response: Toy-37A8
+I (1488) BLE_HANDLER: ✓ Device name in scan response: Toy-398C
 I (1488) BLE_HANDLER: ✓ React Native app should now be able to discover this device
 I (1488) BLE_HANDLER: Characteristic descriptor added - handle: 58
 I (1488) BLE_HANDLER: ✓ Advertising data configured successfully
@@ -461,181 +463,176 @@ I (1488) BLE_HANDLER: ✓ Scan response data set complete successfully
 I (1488) BLE_HANDLER: ✓ Device name and TX power are now in scan response
 I (1488) BLE_HANDLER: 🚀 ADVERTISING STARTED SUCCESSFULLY!
 I (1488) BLE_HANDLER: 🔍 React Native app should now be able to find this device
-I (1488) BLE_HANDLER: 📱 Device appears as: Toy-37A8
+I (1488) BLE_HANDLER: 📱 Device appears as: Toy-398C
 I (1488) BLE_HANDLER: 🔗 Service UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
 I (1498) BLE_HANDLER: ⚡ The device is now discoverable and ready for connection!
 🚀 BLE details captured. Auto-starting Bluetooth QC...
-🟦 Starting Bluetooth QC for MAC: 8C:BF:EA:84:37:AA...
+🟦 Starting Bluetooth QC for MAC: 8C:BF:EA:85:39:8E...
 ⏳ Waiting for device to signal it's ready for connection...
 ⏳ Device signaled ready. Waiting additional 5 seconds for full initialization...
-🔎 Attempt 1/3: Scanning for device with MAC 8C:BF:EA:84:37:AA...
-- Found 63 BLE devices in this scan.
-- Device 0: Unknown (4F:D5:69:B2:C3:79)
-- Device 1: Toy-37A8 (8C:BF:EA:84:37:AA)
-- Device 2: 98a316eefac4 (98:A3:16:EE:FA:C6)
-- Device 3: Toy-8308 (8C:BF:EA:84:83:0A)
-- Device 4: Unknown (62:11:D8:98:2D:0A)
-- Device 5: Unknown (6A:18:57:73:48:7C)
-- Device 6: Unknown (29:B8:DE:D8:01:12)
-- Device 7: 8cbfea849750 (8C:BF:EA:84:97:52)
-- Device 8: Unknown (6D:92:92:E7:4D:F1)
-- Device 9: LE-Maestro (E4:58:BC:7A:7E:2A)
-- Device 10: Unknown (70:D3:24:BD:E7:AB)
-- Device 11: Unknown (50:3E:DC:8F:87:11)
-- Device 12: Unknown (5F:79:C9:91:69:A8)
-- Device 13: Unknown (CE:DC:B9:4A:B5:D1)
-- Device 14: Unknown (66:12:FE:53:CC:61)
-- Device 15: Unknown (7C:B1:D4:6F:B6:A5)
-- Device 16: Unknown (42:81:64:F8:64:A2)
-- Device 17: EDIFIER B (B4:E7:B0:B8:96:6F)
-- Device 18: Unknown (CF:77:AB:A7:37:97)
-- Device 19: Unknown (69:D0:B2:2A:7B:2B)
-- Device 20: Unknown (70:43:F0:77:84:51)
-- Device 21: Unknown (66:84:77:4C:85:DF)
-- Device 22: Unknown (63:73:C2:A6:CB:92)
-- Device 23: Unknown (7A:70:FF:BA:A8:34)
-- Device 24: Unknown (5B:23:DE:36:64:DA)
-- Device 25: Unknown (44:85:01:A6:8D:83)
-- Device 26: Unknown (4A:1A:7D:DF:AC:02)
-- Device 27: Unknown (7D:57:1B:41:65:45)
-- Device 28: Unknown (6D:E0:50:2D:77:89)
-- Device 29: Unknown (7D:C6:B8:83:31:BC)
-- Device 30: Unknown (C4:DA:27:9E:EC:36)
-- Device 31: Unknown (75:4D:A7:F1:BC:A9)
-- Device 32: S2c50be140432cfc4C (98:04:ED:D6:56:12)
-- Device 33: Unknown (5C:12:4C:06:2C:BA)
-- Device 34: Unknown (59:D0:D1:18:AB:CC)
-- Device 35: Unknown (03:6E:5E:F1:6E:7A)
-- Device 36: Unknown (5E:95:86:19:06:E2)
-- Device 37: Unknown (47:AF:7B:FF:8B:53)
-- Device 38: Unknown (D9:8E:12:FD:7E:4B)
-- Device 39: Unknown (49:E5:5F:1A:1E:48)
-- Device 40: Unknown (44:5B:FC:72:EE:A0)
-- Device 41: Unknown (C1:61:F4:20:6D:78)
-- Device 42: 0882X100VI-GELLI (10:E1:8E:32:8C:B1)
-- Device 43: Unknown (48:A3:BD:26:A0:11)
-- Device 44: DREOtf04s83 (00:1C:C2:6B:6C:84)
-- Device 45: Unknown (7C:B3:96:81:4F:FA)
-- Device 46: Unknown (49:2C:00:94:9A:90)
-- Device 47: Unknown (6C:3F:D6:2D:2E:7A)
-- Device 48: Unknown (62:A6:A5:20:D6:05)
-- Device 49: Unknown (EF:55:14:AF:5B:87)
-- Device 50: Unknown (FF:E4:0F:1E:15:F6)
-- Device 51: Unknown (50:40:B1:97:42:1D)
-- Device 52: Unknown (E4:FB:B5:EB:10:86)
-- Device 53: Unknown (45:F9:74:AE:60:35)
-- Device 54: Unknown (C0:6D:0A:7A:0E:DE)
-- Device 55: Glowrium-H1_DF3A62 (24:EC:4A:DF:3A:62)
-- Device 56: Unknown (8C:26:AA:EF:C3:4C)
-- Device 57: Glowrium-H1_FCE726 (48:CA:43:FC:E7:26)
-- Device 58: Unknown (66:18:DB:D8:D9:EF)
-- Device 59: Unknown (48:B6:C2:0F:A8:B9)
-- Device 60: Unknown (E0:32:64:C9:F9:44)
-- Device 61: Unknown (4B:59:F4:93:99:E9)
-- Device 62: Unknown (C6:7A:56:57:9F:E9)
-🎯 MAC Address match found: Toy-37A8 at 8C:BF:EA:84:37:AA
-✅ Found device. Attempting to connect to 8C:BF:EA:84:37:AA...
-{'level': 'info', 'message': 'Connecting to device: 8C:BF:EA:84:37:AA', 'data': None, 'timestamp': 1761691846.4419134}
-I (14798) BLE_HANDLER: GAP event: 60
-I (14878) BLE_HANDLER: 🔗 CLIENT CONNECTED!
-I (14878) BLE_HANDLER: 📱 Client Details:
-I (14878) BLE_HANDLER:    Connection ID: 0
-I (14878) BLE_HANDLER:    MAC Address: 6c:94:66:36:ec:e5
-I (14878) BLE_HANDLER:    Device Serial: 8cbfea8437a8
-I (14878) BLE_HANDLER:    Device Name: Toy-37A8
-I (14878) BLE_HANDLER: ✅ Ready for characteristic read/write operations
-I (14878) BLE_HANDLER: Connection status changed to: CONNECTED
-I (14878) BLE_HANDLER: 📡 Requesting connection params: min_int=16, max_int=32, latency=0, timeout=400
-I (14878) BLE_HANDLER: 🔍 Starting continuous WiFi scanning for BLE client
-I (14878) wifi_helper: Starting continuous WiFi scanning every 15000 ms
-I (14878) wifi_helper: 🔧 WiFi Buffer Config: RX Static=24, RX Dynamic=64, TX Dynamic=64, BA Win=16
-I (14878) pp: pp rom version: e7ae62f
-I (14878) net80211: net80211 rom version: e7ae62f
-I (14888) wifi:wifi driver task: 3fcd94bc, prio:23, stack:6656, core=0
-I (14888) wifi:wifi firmware version: 79fa3f41ba
-I (14888) wifi:wifi certification version: v7.0
-I (14888) wifi:config NVS flash: enabled
-I (14888) wifi:config nano formatting: disabled
-I (14888) wifi:Init data frame dynamic rx buffer num: 64
-I (14888) wifi:Init static rx mgmt buffer num: 5
-I (14888) wifi:Init management short buffer num: 32
-I (14888) wifi:Init static tx buffer num: 16
-I (14888) wifi:Init tx cache buffer num: 32
-I (14888) wifi:Init static tx FG buffer num: 2
-I (14888) wifi:Init static rx buffer size: 1600
-I (14888) wifi:Init static rx buffer num: 24
-I (14888) wifi:Init dynamic rx buffer num: 64
-I (14898) wifi_init: rx ba win: 32
-I (14898) wifi_init: accept mbox: 6
-I (14898) wifi_init: tcpip mbox: 64
-I (14898) wifi_init: udp mbox: 6
-I (14898) wifi_init: tcp mbox: 6
-I (14898) wifi_init: tcp tx win: 65535
-I (14898) wifi_init: tcp rx win: 65535
-I (14898) wifi_init: tcp mss: 1440
-I (14898) wifi_init: WiFi/LWIP prefer SPIRAM
-I (14898) wifi_init: WiFi IRAM OP enabled
-I (14898) wifi_init: WiFi RX IRAM OP enabled
-I (14898) wifi_helper: 🚀 Applying WiFi performance optimizations...
-I (14898) wifi:Set ps type: 0, coexist: 0
+🔎 Attempt 1/3: Scanning for device with MAC 8C:BF:EA:85:39:8E...
+- Found 58 BLE devices in this scan.
+- Device 0: Toy-398C (8C:BF:EA:85:39:8E)
+- Device 1: Unknown (8C:26:AA:EF:C3:4C)
+- Device 2: GBK_H6147_B1FF (D4:AD:FC:11:B1:FF)
+- Device 3: LE-Maestro (5D:0A:BF:4C:C4:C4)
+- Device 4: Unknown (46:5B:0B:18:58:D4)
+- Device 5: Unknown (77:9C:FB:CC:41:E3)
+- Device 6: 8cbfea849750 (8C:BF:EA:84:97:52)
+- Device 7: Unknown (6D:65:D7:21:72:20)
+- Device 8: Unknown (56:8A:26:23:0F:FF)
+- Device 9: Unknown (42:29:51:42:C0:EC)
+- Device 10: Unknown (51:26:F1:D6:DE:D8)
+- Device 11: Unknown (7C:A1:44:C0:14:25)
+- Device 12: Unknown (43:2A:B7:9E:A3:4C)
+- Device 13: Unknown (55:C7:20:A7:D2:71)
+- Device 14: Unknown (64:E7:D8:8C:E2:65)
+- Device 15: Glowrium-H1_DF3A62 (24:EC:4A:DF:3A:62)
+- Device 16: Unknown (42:80:0E:12:F2:18)
+- Device 17: 98a316eefac4 (98:A3:16:EE:FA:C6)
+- Device 18: Unknown (CB:86:1C:46:EA:1D)
+- Device 19: Unknown (5E:BE:A7:7D:5C:28)
+- Device 20: Unknown (7B:B8:3E:19:58:54)
+- Device 21: Unknown (7C:AE:E6:9B:FB:1A)
+- Device 22: Unknown (47:0F:E5:7F:CB:3D)
+- Device 23: Unknown (37:E5:2C:D3:6A:BC)
+- Device 24: Unknown (01:05:A2:FE:DC:3B)
+- Device 25: Unknown (18:64:3D:B3:38:2A)
+- Device 26: Unknown (4A:29:A9:37:A6:0E)
+- Device 27: Unknown (78:C7:09:6B:9F:F0)
+- Device 28: Unknown (7B:28:C4:98:8F:E1)
+- Device 29: Unknown (62:9F:30:E3:90:BF)
+- Device 30: Unknown (7A:9C:14:F3:F7:00)
+- Device 31: Unknown (72:1A:F6:7C:90:DB)
+- Device 32: Unknown (72:03:FC:BB:A2:7C)
+- Device 33: Unknown (E5:2B:BD:0C:5B:CD)
+- Device 34: Unknown (63:5A:7B:2C:DD:9F)
+- Device 35: Unknown (59:51:9D:7F:84:0F)
+- Device 36: Unknown (4D:B5:BF:99:76:4A)
+- Device 37: GBK_H6147_0505 (D4:AD:FC:9E:05:05)
+- Device 38: Unknown (4F:C4:8F:F5:C2:DA)
+- Device 39: Unknown (61:5D:D8:92:E3:99)
+- Device 40: Unknown (7F:1F:04:7D:60:F2)
+- Device 41: Unknown (46:22:63:C5:59:DB)
+- Device 42: Unknown (64:E7:D8:63:55:8D)
+- Device 43: Unknown (60:38:E9:FE:9F:40)
+- Device 44: Unknown (D9:E6:21:80:9B:1F)
+- Device 45: Unknown (4B:34:D8:FB:A6:96)
+- Device 46: Unknown (61:FB:59:79:0D:5A)
+- Device 47: Unknown (48:3B:25:C2:6A:57)
+- Device 48: Glowrium-H1_FCE726 (48:CA:43:FC:E7:26)
+- Device 49: Unknown (CD:0A:5F:19:75:08)
+- Device 50: Unknown (41:E0:B6:7A:1C:D3)
+- Device 51: Unknown (C3:9A:FD:CC:74:4B)
+- Device 52: Unknown (FE:63:45:B1:D5:17)
+- Device 53: Unknown (70:1E:5D:3E:55:83)
+- Device 54: Unknown (5B:1F:4F:D9:D6:C0)
+- Device 55: Unknown (D1:40:F9:7A:BC:AC)
+- Device 56: Unknown (6F:B3:6A:DC:F4:A3)
+- Device 57: Unknown (46:86:40:18:AC:95)
+🎯 MAC Address match found: Toy-398C at 8C:BF:EA:85:39:8E
+✅ Found device. Attempting to connect to 8C:BF:EA:85:39:8E...
+{'level': 'info', 'message': 'Connecting to device: 8C:BF:EA:85:39:8E', 'data': None, 'timestamp': 1761695693.1587176}
+I (14478) BLE_HANDLER: GAP event: 60
+I (14588) BLE_HANDLER: 🔗 CLIENT CONNECTED!
+I (14588) BLE_HANDLER: 📱 Client Details:
+I (14588) BLE_HANDLER:    Connection ID: 0
+I (14588) BLE_HANDLER:    MAC Address: 6c:94:66:36:ec:e5
+I (14588) BLE_HANDLER:    Device Serial: 8cbfea85398c
+I (14588) BLE_HANDLER:    Device Name: Toy-398C
+I (14588) BLE_HANDLER: ✅ Ready for characteristic read/write operations
+I (14588) BLE_HANDLER: Connection status changed to: CONNECTED
+I (14588) BLE_HANDLER: 📡 Requesting connection params: min_int=16, max_int=32, latency=0, timeout=400
+I (14598) BLE_HANDLER: 🔍 Starting continuous WiFi scanning for BLE client
+I (14598) wifi_helper: Starting continuous WiFi scanning every 15000 ms
+I (14598) wifi_helper: 🔧 WiFi Buffer Config: RX Static=24, RX Dynamic=64, TX Dynamic=64, BA Win=16
+I (14598) pp: pp rom version: e7ae62f
+I (14598) net80211: net80211 rom version: e7ae62f
+I (14608) wifi:wifi driver task: 3fcd94bc, prio:23, stack:6656, core=0
+I (14608) wifi:wifi firmware version: 79fa3f41ba
+I (14608) wifi:wifi certification version: v7.0
+I (14608) wifi:config NVS flash: enabled
+I (14608) wifi:config nano formatting: disabled
+I (14608) wifi:Init data frame dynamic rx buffer num: 64
+I (14608) wifi:Init static rx mgmt buffer num: 5
+I (14608) wifi:Init management short buffer num: 32
+I (14608) wifi:Init static tx buffer num: 16
+I (14608) wifi:Init tx cache buffer num: 32
+I (14608) wifi:Init static tx FG buffer num: 2
+I (14608) wifi:Init static rx buffer size: 1600
+I (14608) wifi:Init static rx buffer num: 24
+I (14608) wifi:Init dynamic rx buffer num: 64
+I (14618) wifi_init: rx ba win: 32
+I (14618) wifi_init: accept mbox: 6
+I (14618) wifi_init: tcpip mbox: 64
+I (14618) wifi_init: udp mbox: 6
+I (14618) wifi_init: tcp mbox: 6
+I (14618) wifi_init: tcp tx win: 65535
+I (14618) wifi_init: tcp rx win: 65535
+I (14618) wifi_init: tcp mss: 1440
+I (14618) wifi_init: WiFi/LWIP prefer SPIRAM
+I (14618) wifi_init: WiFi IRAM OP enabled
+I (14618) wifi_init: WiFi RX IRAM OP enabled
+I (14618) wifi_helper: 🚀 Applying WiFi performance optimizations...
+I (14618) wifi:Set ps type: 0, coexist: 0
 
-I (14898) wifi_helper: ✅ WiFi power saving DISABLED - max performance mode
-I (14898) wifi:(2.4G)set country: cc=US  schan=1 nchan=11 policy=0
+I (14618) wifi_helper: ✅ WiFi power saving DISABLED - max performance mode
+I (14618) wifi:(2.4G)set country: cc=US  schan=1 nchan=11 policy=0
 
-I (14898) wifi_helper: ✅ Country code set to US (channels 1-11, 21dBm max power)
-I (14898) wifi_helper: ✅ WiFi protocol set to 802.11b/g/n
-I (14898) wifi_helper: ✅ WiFi bandwidth set to 40MHz
-I (14898) wifi_helper: 🚀 WiFi performance optimizations applied!
-I (14898) wifi_helper: WiFi helper initialized successfully with performance optimizations
-I (14898) wifi:mode : sta (8c:bf:ea:84:37:a8)
-I (14908) wifi:enable tsf
-I (14908) wifi_helper: ✅ Scan task created successfully, handle: 0x3fcec038
-I (14908) wifi_helper: 🔍 Triggering immediate WiFi scan for instant network list
-I (14908) wifi_helper: ✅ Immediate scan task notification sent
-I (14908) wifi_helper: Starting periodic WiFi scan...
-I (14908) wifi_helper: Continuous WiFi scanning started successfully
-I (14908) BLE_HANDLER: ✅ WiFi scanning started - will send networks via BLE notifications
-I (14908) neopixel: Stopping any running LED animation
-I (14908) neopixel: LED animation stopped
-I (14908) neopixel: Stopping any running LED animation
-I (14908) neopixel: LED animation stopped
-I (14908) BLE_HANDLER: 🛑 Advertising stopped - Device no longer discoverable
-I (14908) wifi_helper: WIFI_EVENT_STA_START received - awaiting explicit connect
-I (14938) BLE_HANDLER: GAP event: 21
-I (14998) BLE_HANDLER: MTU exchanged - new MTU: 517 bytes
-I (15618) BLE_HANDLER: Connection params updated - status: 0, min_int: 16, max_int: 32, latency: 0, timeout: 400
-I (16248) BLE_HANDLER: Connection params updated - status: 0, min_int: 0, max_int: 0, latency: 0, timeout: 400
-{'level': 'success', 'message': 'Connected to device', 'data': None, 'timestamp': 1761691849.0842094}
-{'level': 'success', 'message': 'Bluetooth notifications started', 'data': None, 'timestamp': 1761691849.1288335}
+I (14628) wifi_helper: ✅ Country code set to US (channels 1-11, 21dBm max power)
+I (14628) wifi_helper: ✅ WiFi protocol set to 802.11b/g/n
+I (14628) wifi_helper: ✅ WiFi bandwidth set to 40MHz
+I (14628) wifi_helper: 🚀 WiFi performance optimizations applied!
+I (14628) wifi_helper: WiFi helper initialized successfully with performance optimizations
+I (14628) wifi:mode : sta (8c:bf:ea:85:39:8c)
+I (14628) wifi:enable tsf
+I (14628) wifi_helper: ✅ Scan task created successfully, handle: 0x3fcec038
+I (14628) wifi_helper: 🔍 Triggering immediate WiFi scan for instant network list
+I (14628) wifi_helper: ✅ Immediate scan task notification sent
+I (14628) wifi_helper: Starting periodic WiFi scan...
+I (14628) wifi_helper: Continuous WiFi scanning started successfully
+I (14628) BLE_HANDLER: ✅ WiFi scanning started - will send networks via BLE notifications
+I (14628) neopixel: Stopping any running LED animation
+I (14628) neopixel: LED animation stopped
+I (14628) neopixel: Stopping any running LED animation
+I (14628) neopixel: LED animation stopped
+I (14638) BLE_HANDLER: 🛑 Advertising stopped - Device no longer discoverable
+I (14638) wifi_helper: WIFI_EVENT_STA_START received - awaiting explicit connect
+I (14648) BLE_HANDLER: GAP event: 21
+I (14648) BLE_HANDLER: MTU exchanged - new MTU: 517 bytes
+I (15268) BLE_HANDLER: Connection params updated - status: 0, min_int: 16, max_int: 32, latency: 0, timeout: 400
+I (15778) BLE_HANDLER: Connection params updated - status: 0, min_int: 0, max_int: 0, latency: 0, timeout: 400
+{'level': 'success', 'message': 'Connected to device', 'data': None, 'timestamp': 1761695695.4187741}
+I (16508) BLE_HANDLER: Data written - handle: 58, length: 2
+I (16508) BLE_HANDLER: 0x3c192dca   01 00                                             |..|
+I (16508) BLE_HANDLER: Descriptor write - handle: 58, value: 0x0001
+I (16518) BLE_HANDLER: ✅ Client SUBSCRIBED to notifications
+I (16518) BLE_HANDLER: 📡 Sending immediate WiFi state to new subscriber
+I (16518) BLE_HANDLER: ✅ Immediate WiFi state sent successfully
+I (16518) BLE_HANDLER: Sent GATT write response
+I (16518) BLE_HANDLER: GATTS event: 21
+I (16518) BLE_HANDLER: Indication confirmed by client - handle: 47, status: 0
+{'level': 'success', 'message': 'Bluetooth notifications started', 'data': None, 'timestamp': 1761695695.449949}
 ✅ Connected to Bluetooth device. Waiting for services to stabilize...
-I (16988) BLE_HANDLER: Data written - handle: 58, length: 2
-I (16988) BLE_HANDLER: 0x3c1930da   01 00                                             |..|
-I (16988) BLE_HANDLER: Descriptor write - handle: 58, value: 0x0001
-I (16988) BLE_HANDLER: ✅ Client SUBSCRIBED to notifications
-I (16988) BLE_HANDLER: 📡 Sending immediate WiFi state to new subscriber
-I (16988) BLE_HANDLER: ✅ Immediate WiFi state sent successfully
-I (16988) BLE_HANDLER: Sent GATT write response
-I (16988) BLE_HANDLER: GATTS event: 21
-I (16988) BLE_HANDLER: Indication confirmed by client - handle: 47, status: 0
-{'level': 'info', 'message': 'Starting test: Test Mic L/R Balance', 'data': None, 'timestamp': 1761691850.1432586}
-{'level': 'info', 'message': '[BLE TX] {"id":"qa_mic_lr_test_1761691850","type":"qa_mic_lr_test","payload":{"wait_ms": 2000, "tone_ms": 2000, "volume_percent": 95, "freq_hz": 1000}}', 'data': None, 'timestamp': 1761691850.1432586}
-I (18048) BLE_HANDLER: Data written - handle: 55, length: 142
-I (18048) BLE_HANDLER: 0x3c1936d6   7b 22 69 64 22 3a 22 71  61 5f 6d 69 63 5f 6c 72  |{"id":"qa_mic_lr|
-I (18048) BLE_HANDLER: 0x3c1936e6   5f 74 65 73 74 5f 31 37  36 31 36 39 31 38 35 30  |_test_1761691850|
-I (18048) BLE_HANDLER: 0x3c1936f6   22 2c 22 74 79 70 65 22  3a 22 71 61 5f 6d 69 63  |","type":"qa_mic|
-I (18048) BLE_HANDLER: 0x3c193706   5f 6c 72 5f 74 65 73 74  22 2c 22 70 61 79 6c 6f  |_lr_test","paylo|
-I (18058) BLE_HANDLER: 0x3c193716   61 64 22 3a 7b 22 77 61  69 74 5f 6d 73 22 3a 20  |ad":{"wait_ms": |
-I (18058) BLE_HANDLER: 0x3c193726   32 30 30 30 2c 20 22 74  6f 6e 65 5f 6d 73 22 3a  |2000, "tone_ms":|
-I (18058) BLE_HANDLER: 0x3c193736   20 32 30 30 30 2c 20 22  76 6f 6c 75 6d 65 5f 70  | 2000, "volume_p|
-I (18058) BLE_HANDLER: 0x3c193746   65 72 63 65 6e 74 22 3a  20 39 35 2c 20 22 66 72  |ercent": 95, "fr|
-I (18058) BLE_HANDLER: 0x3c193756   65 71 5f 68 7a 22 3a 20  31 30 30 30 7d 7d        |eq_hz": 1000}}|
-I (18058) BLE_HANDLER: QA control received (142 bytes)
-I (18058) wifi_helper: Stopping continuous WiFi scanning
-I (18058) wifi_helper: WiFi scan task ending
-I (18158) wifi_helper: Continuous WiFi scanning stopped
-I (18158) BLE_HANDLER: 🛑 WiFi scanning stopped (explicit)
+{'level': 'info', 'message': 'Starting test: Test Mic L/R Balance', 'data': None, 'timestamp': 1761695696.4533107}
+{'level': 'info', 'message': '[BLE TX] {"id":"qa_mic_lr_test_1761695696","type":"qa_mic_lr_test","payload":{"wait_ms": 2000, "tone_ms": 2000, "volume_percent": 95, "freq_hz": 1000}}', 'data': None, 'timestamp': 1761695696.4533107}
+I (17568) BLE_HANDLER: Data written - handle: 55, length: 142
+I (17568) BLE_HANDLER: 0x3c192f12   7b 22 69 64 22 3a 22 71  61 5f 6d 69 63 5f 6c 72  |{"id":"qa_mic_lr|
+I (17568) BLE_HANDLER: 0x3c192f22   5f 74 65 73 74 5f 31 37  36 31 36 39 35 36 39 36  |_test_1761695696|
+I (17568) BLE_HANDLER: 0x3c192f32   22 2c 22 74 79 70 65 22  3a 22 71 61 5f 6d 69 63  |","type":"qa_mic|
+I (17568) BLE_HANDLER: 0x3c192f42   5f 6c 72 5f 74 65 73 74  22 2c 22 70 61 79 6c 6f  |_lr_test","paylo|
+I (17568) BLE_HANDLER: 0x3c192f52   61 64 22 3a 7b 22 77 61  69 74 5f 6d 73 22 3a 20  |ad":{"wait_ms": |
+I (17568) BLE_HANDLER: 0x3c192f62   32 30 30 30 2c 20 22 74  6f 6e 65 5f 6d 73 22 3a  |2000, "tone_ms":|
+I (17568) BLE_HANDLER: 0x3c192f72   20 32 30 30 30 2c 20 22  76 6f 6c 75 6d 65 5f 70  | 2000, "volume_p|
+I (17568) BLE_HANDLER: 0x3c192f82   65 72 63 65 6e 74 22 3a  20 39 35 2c 20 22 66 72  |ercent": 95, "fr|
+I (17568) BLE_HANDLER: 0x3c192f92   65 71 5f 68 7a 22 3a 20  31 30 30 30 7d 7d        |eq_hz": 1000}}|
+I (17568) BLE_HANDLER: QA control received (142 bytes)
+I (17568) wifi_helper: Stopping continuous WiFi scanning
+I (17568) wifi_helper: WiFi scan task ending
+I (17668) wifi_helper: Continuous WiFi scanning stopped
+I (17668) BLE_HANDLER: 🛑 WiFi scanning stopped (explicit)
 Boost enable pin configured and set high (normal logic)
-I (18158) SHARED_I2C: ✅ Added I2C device: address=0x6C, speed=100000 Hz
+I (17668) SHARED_I2C: ✅ Added I2C device: address=0x6C, speed=100000 Hz
 TFA9879 I2C device initialized on shared bus (address: 0x6C)
 I2C initialized successfully
 
@@ -677,632 +674,166 @@ DRC Control (0x10): 0x92BA
 
 TFA9879 initialization complete
 Setting volume to 0x39 (reg=0x1039)
-I (18198) BLE_HANDLER: QA mic_lr_test: amp volume set to 57 (percent=95)
-I (18198) audio_system: Initializing audio system for PDM_v2 hardware
-I (18198) audio_system: PDM Mic RX config: CLK=10, DATA=11, I2S_NUM=0
-I (18198) audio_system: PDM Mic RX total DMA buf size: 8192
-I (18198) audio_system: 🧠 PDM_SETUP TOTAL: -9232 bytes
-I (18198) audio_system: Speaker TX config: BCLK=38, WS=47, DOUT=39, I2S_NUM=1
-I (18198) audio_system: 🧠 SPEAKER_SETUP TOTAL: -4696 bytes
-I (18198) audio_system: Audio system initialized successfully
-I (18198) BLE_HANDLER: QA mic_lr_test start: wait_ms=2000, tone_ms=2000, vol=95, freq=1000, sr=16000
-I (18208) BLE_HANDLER: QA mic_lr_test: Phase 1 - capturing baseline (2000 ms)
-I (19718) wifi_helper: WiFi scan completed
-I (20208) BLE_HANDLER: QA mic_lr_test: baseline captured 31744 samples
-I (20208) BLE_HANDLER: QA mic_lr_test: Phase 2 - playing tone and capturing (2000 ms)
-I (20208) BLE_HANDLER: 🎵 TONE TRACKING INITIALIZED:
-I (20208) BLE_HANDLER:   📊 Expected tone start: sample 31744 (1984.0 ms)
-I (20208) BLE_HANDLER:   📊 Expected tone end: sample 63744 (3984.0 ms)
-I (20218) BLE_HANDLER: 🎙️ RECORDING PROGRESS: sample 31744 (1984.0 ms), speaker: NOT STARTED
-I (20228) BLE_HANDLER: 🔊 SPEAKER START: First audio written at sample 32256 (2016.0 ms), wrote 1024 bytes
-I (20728) BLE_HANDLER: 🎙️ RECORDING PROGRESS: sample 39936 (2496.0 ms), speaker: ACTIVE
-I (21238) BLE_HANDLER: 🎙️ RECORDING PROGRESS: sample 48128 (3008.0 ms), speaker: ACTIVE
-I (21748) BLE_HANDLER: 🎙️ RECORDING PROGRESS: sample 56320 (3520.0 ms), speaker: ACTIVE
-I (22198) BLE_HANDLER: 🔊 SPEAKER END: Tone finished at sample 64000 (4000.0 ms)
-I (22198) BLE_HANDLER: 🎵 ACTUAL TONE DURATION: 1984.0 ms (31744 samples)
-I (22198) BLE_HANDLER: QA mic_lr_test: capture complete (64000 samples total)
-I (22198) BLE_HANDLER: 📊 DETAILED RMS ANALYSIS (250ms windows across 4 seconds):
-I (22198) BLE_HANDLER:     Time(ms)  | Left RMS | Right RMS | L/R Ratio | Notes
-I (22198) BLE_HANDLER:     ---------|----------|-----------|-----------|------------------
-I (22198) BLE_HANDLER:        0- 250 |   9112.0 |    9364.6 |     0.973 | BASELINE
-I (22208) BLE_HANDLER:      250- 500 |   2483.7 |    2619.5 |     0.948 | BASELINE
-I (22208) BLE_HANDLER:      500- 750 |   2496.2 |    2581.3 |     0.967 | BASELINE
-I (22208) BLE_HANDLER:      750-1000 |   2482.5 |    2605.2 |     0.953 | BASELINE
-I (22208) BLE_HANDLER:     1000-1250 |   2488.1 |    2602.6 |     0.956 | BASELINE
-I (22208) BLE_HANDLER:     1250-1500 |   2474.2 |    2591.0 |     0.955 | BASELINE
-I (22208) BLE_HANDLER:     1500-1750 |   2477.0 |    2591.3 |     0.956 | BASELINE
-I (22208) BLE_HANDLER:     1750-2000 |   2485.1 |    2612.1 |     0.951 | BASELINE
-I (22208) BLE_HANDLER:     2000-2250 |  18509.3 |   22262.3 |     0.831 | TONE EXPECTED
-I (22208) BLE_HANDLER:     2250-2500 |  25187.0 |   30289.9 |     0.832 | TONE ACTIVE
-I (22208) BLE_HANDLER:     2500-2750 |  25187.0 |   30278.4 |     0.832 | TONE ACTIVE
-I (22218) BLE_HANDLER:     2750-3000 |  25158.2 |   30277.0 |     0.831 | TONE ACTIVE
-I (22218) BLE_HANDLER:     3000-3250 |  25144.3 |   30275.2 |     0.831 | TONE ACTIVE
-I (22218) BLE_HANDLER:     3250-3500 |  25096.4 |   30278.9 |     0.829 | TONE ACTIVE
-I (22218) BLE_HANDLER:     3500-3750 |  25069.9 |   30299.2 |     0.827 | TONE ACTIVE
-I (22218) BLE_HANDLER:     3750-4000 |  25026.9 |   30303.4 |     0.826 | TONE ACTIVE
-I (22218) BLE_HANDLER: 📊 RMS ANALYSIS COMPLETE - Look for signal increase during TONE ACTIVE periods
-I (22218) BLE_HANDLER: 🎯 USING ACTUAL SPEAKER TIMING FOR ANALYSIS:
-I (22218) BLE_HANDLER:   📊 Actual speaker: samples 32256 - 64000 (2016.0 - 4000.0 ms)
-I (22218) BLE_HANDLER:   📊 Analysis window: samples 40128 - 56128 (2508.0 - 3508.0 ms, 16000 samples)
-I (22218) BLE_HANDLER: QA mic_lr_test timeline: wait_ms=2000 tone_ms=2000 total_ms=4000
-I (22218) BLE_HANDLER: QA mic_lr_test windows(ms): baseline [984..1984], tone [2508..3508]
-I (22288) BLE_HANDLER: 🔍 DETAILED MIC TEST ANALYSIS:
-I (22288) BLE_HANDLER:   📊 Left Detection:
-I (22298) BLE_HANDLER:     - Tone RMS: 25147.4 > Baseline*1.5 (3721.9) = PASS
-I (22298) BLE_HANDLER:     - Correlation: 0.99 >= 0.70 = PASS
-I (22298) BLE_HANDLER:     - Overall Left: PASS
-I (22298) BLE_HANDLER:   📊 Right Detection:
-I (22298) BLE_HANDLER:     - Tone RMS: 30280.0 > Baseline*1.5 (3901.3) = PASS
-I (22298) BLE_HANDLER:     - Correlation: 0.95 >= 0.70 = PASS
-I (22298) BLE_HANDLER:     - Overall Right: PASS
-I (22298) BLE_HANDLER:   📊 L/R Balance:
-I (22298) BLE_HANDLER:     - Balance: -1.6 dB (abs=1.6) <= 4.0 dB = PASS
-I (22298) BLE_HANDLER:     - L/R Correlation: 0.95 >= 0.50 = PASS
-I (22298) BLE_HANDLER:     - Overall L/R Match: PASS
-I (22298) BLE_HANDLER:   🎯 FAILURE ANALYSIS:
-I (22298) BLE_HANDLER: QA mic_lr_test result: {"kind":"mic_lr_test","payload":{"sr":16000,"wait_ms":2000,"tone_ms":2000,"freq":1000,"vol":95,"baseline":{"rms_L":2481.3,"rms_R":2600.9},"tone":{"rms_L":25147.4,"rms_R":30280.0,"corr_L":0.99,"corr_R":0.95,"lr_corr":0.95,"balance_db":-1.6},"detect":{"left":true,"right":true,"lr_match":true},"pass":true}}
-I (22298) BLE_HANDLER: QA mic_lr_test window: baseline idx=15744 len=16000; tone idx=40128 len=16000
-I (22298) BLE_HANDLER: QA mic_lr_test summary:
-baseline rms L/R: 2481.3 / 2600.9
-tone: rms L/R: 25147.4 / 30280.0, corr L/R: 0.99 / 0.95, lr_corr: 0.95, balance: -1.6 dB
+I (17708) BLE_HANDLER: QA mic_lr_test: amp volume set to 57 (percent=95)
+I (17708) audio_system: Initializing audio system for PDM_v2 hardware
+I (17708) audio_system: PDM Mic RX config: CLK=10, DATA=11, I2S_NUM=0
+I (17708) audio_system: PDM Mic RX total DMA buf size: 8192
+I (17708) audio_system: 🧠 PDM_SETUP TOTAL: -9232 bytes
+I (17708) audio_system: Speaker TX config: BCLK=38, WS=47, DOUT=39, I2S_NUM=1
+I (17718) audio_system: 🧠 SPEAKER_SETUP TOTAL: -4684 bytes
+I (17718) audio_system: Audio system initialized successfully
+I (17718) BLE_HANDLER: QA mic_lr_test start: wait_ms=2000, tone_ms=2000, vol=95, freq=1000, sr=16000
+I (17718) BLE_HANDLER: QA mic_lr_test: Phase 1 - capturing baseline (2000 ms)
+I (19448) wifi_helper: WiFi scan completed
+I (19718) BLE_HANDLER: QA mic_lr_test: baseline captured 31744 samples
+I (19718) BLE_HANDLER: QA mic_lr_test: Phase 2 - playing tone and capturing (2000 ms)
+I (19718) BLE_HANDLER: 🎵 TONE TRACKING INITIALIZED:
+I (19718) BLE_HANDLER:   📊 Expected tone start: sample 31744 (1984.0 ms)
+I (19718) BLE_HANDLER:   📊 Expected tone end: sample 63744 (3984.0 ms)
+I (19728) BLE_HANDLER: 🎙️ RECORDING PROGRESS: sample 31744 (1984.0 ms), speaker: NOT STARTED
+I (19738) BLE_HANDLER: 🔊 SPEAKER START: First audio written at sample 32256 (2016.0 ms), wrote 1024 bytes
+I (20238) BLE_HANDLER: 🎙️ RECORDING PROGRESS: sample 39936 (2496.0 ms), speaker: ACTIVE
+I (20748) BLE_HANDLER: 🎙️ RECORDING PROGRESS: sample 48128 (3008.0 ms), speaker: ACTIVE
+I (21268) BLE_HANDLER: 🎙️ RECORDING PROGRESS: sample 56320 (3520.0 ms), speaker: ACTIVE
+I (21708) BLE_HANDLER: 🔊 SPEAKER END: Tone finished at sample 64000 (4000.0 ms)
+I (21708) BLE_HANDLER: 🎵 ACTUAL TONE DURATION: 1984.0 ms (31744 samples)
+I (21708) BLE_HANDLER: QA mic_lr_test: capture complete (64000 samples total)
+I (21708) BLE_HANDLER: 📊 DETAILED RMS ANALYSIS (250ms windows across 4 seconds):
+I (21708) BLE_HANDLER:     Time(ms)  | Left RMS | Right RMS | L/R Ratio | Notes
+I (21708) BLE_HANDLER:     ---------|----------|-----------|-----------|------------------
+I (21718) BLE_HANDLER:        0- 250 |   8747.7 |    8663.2 |     1.010 | BASELINE
+I (21718) BLE_HANDLER:      250- 500 |   2553.6 |    2353.6 |     1.085 | BASELINE
+I (21718) BLE_HANDLER:      500- 750 |   2527.1 |    2423.9 |     1.043 | BASELINE
+I (21718) BLE_HANDLER:      750-1000 |   2547.6 |    2477.4 |     1.028 | BASELINE
+I (21718) BLE_HANDLER:     1000-1250 |   2537.5 |    2500.3 |     1.015 | BASELINE
+I (21718) BLE_HANDLER:     1250-1500 |   2557.3 |    2465.2 |     1.037 | BASELINE
+I (21718) BLE_HANDLER:     1500-1750 |   2549.9 |    2459.8 |     1.037 | BASELINE
+I (21718) BLE_HANDLER:     1750-2000 |   2514.0 |    2462.8 |     1.021 | BASELINE
+I (21718) BLE_HANDLER:     2000-2250 |   4553.3 |    3555.8 |     1.281 | TONE EXPECTED
+I (21728) BLE_HANDLER:     2250-2500 |   5752.2 |    4220.9 |     1.363 | TONE ACTIVE
+I (21728) BLE_HANDLER:     2500-2750 |   5718.7 |    4213.8 |     1.357 | TONE ACTIVE
+I (21728) BLE_HANDLER:     2750-3000 |   5715.4 |    4219.6 |     1.354 | TONE ACTIVE
+I (21728) BLE_HANDLER:     3000-3250 |   5695.0 |    4206.8 |     1.354 | TONE ACTIVE
+I (21728) BLE_HANDLER:     3250-3500 |   5691.4 |    4206.6 |     1.353 | TONE ACTIVE
+I (21728) BLE_HANDLER:     3500-3750 |   5677.9 |    4183.3 |     1.357 | TONE ACTIVE
+I (21728) BLE_HANDLER:     3750-4000 |   5669.2 |    4167.2 |     1.360 | TONE ACTIVE
+I (21728) BLE_HANDLER: 📊 RMS ANALYSIS COMPLETE - Look for signal increase during TONE ACTIVE periods
+I (21728) BLE_HANDLER: 🎯 USING ACTUAL SPEAKER TIMING FOR ANALYSIS:
+I (21728) BLE_HANDLER:   📊 Actual speaker: samples 32256 - 64000 (2016.0 - 4000.0 ms)
+I (21728) BLE_HANDLER:   📊 Analysis window: samples 40128 - 56128 (2508.0 - 3508.0 ms, 16000 samples)
+I (21728) BLE_HANDLER: QA mic_lr_test timeline: wait_ms=2000 tone_ms=2000 total_ms=4000
+I (21728) BLE_HANDLER: QA mic_lr_test windows(ms): baseline [984..1984], tone [2508..3508]
+I (21808) BLE_HANDLER: 🔍 DETAILED MIC TEST ANALYSIS:
+I (21808) BLE_HANDLER:   📊 Left Detection:
+I (21808) BLE_HANDLER:     - Tone RMS: 5705.5 > Baseline*1.5 (3807.4) = PASS
+I (21808) BLE_HANDLER:     - Correlation: 1.00 >= 0.70 = PASS
+I (21808) BLE_HANDLER:     - Overall Left: PASS
+I (21808) BLE_HANDLER:   📊 Right Detection:
+I (21808) BLE_HANDLER:     - Tone RMS: 4211.6 > Baseline*1.5 (3706.3) = PASS
+I (21808) BLE_HANDLER:     - Correlation: 1.00 >= 0.70 = PASS
+I (21808) BLE_HANDLER:     - Overall Right: PASS
+I (21808) BLE_HANDLER:   📊 L/R Balance:
+I (21808) BLE_HANDLER:     - Balance: 2.6 dB (abs=2.6) <= 4.0 dB = PASS
+I (21808) BLE_HANDLER:     - L/R Correlation: 0.99 >= 0.50 = PASS
+I (21808) BLE_HANDLER:     - Overall L/R Match: PASS
+I (21808) BLE_HANDLER:   🎯 FAILURE ANALYSIS:
+I (21808) BLE_HANDLER: QA mic_lr_test result: {"kind":"mic_lr_test","payload":{"sr":16000,"wait_ms":2000,"tone_ms":2000,"freq":1000,"vol":95,"baseline":{"rms_L":2538.3,"rms_R":2470.9},"tone":{"rms_L":5705.5,"rms_R":4211.6,"corr_L":1.00,"corr_R":1.00,"lr_corr":0.99,"balance_db":2.6},"detect":{"left":true,"right":true,"lr_match":true},"pass":true}}
+I (21808) BLE_HANDLER: QA mic_lr_test window: baseline idx=15744 len=16000; tone idx=40128 len=16000
+I (21808) BLE_HANDLER: QA mic_lr_test summary:
+baseline rms L/R: 2538.3 / 2470.9
+tone: rms L/R: 5705.5 / 4211.6, corr L/R: 1.00 / 1.00, lr_corr: 0.99, balance: 2.6 dB
 detect: left=true right=true lr_match=true
 OVERALL PASS: true
-I (22298) BLE_HANDLER: 🔍 Starting continuous WiFi scanning for BLE client
-I (22298) wifi_helper: Starting continuous WiFi scanning every 15000 ms
-I (22298) wifi_helper: ✅ Scan task created successfully, handle: 0x3fceeb70
-I (22298) wifi_helper: 🔍 Triggering immediate WiFi scan for instant network list
-I (22298) wifi_helper: ✅ Immediate scan task notification sent
-I (22298) wifi_helper: Starting periodic WiFi scan...
-I (22298) wifi_helper: Continuous WiFi scanning started successfully
-I (22298) BLE_HANDLER: ✅ WiFi scanning started - will send networks via BLE notifications
-I (22308) BLE_HANDLER: Sent GATT write response
-I (22308) BLE_HANDLER: Connection params updated - status: 0, min_int: 0, max_int: 0, latency: 0, timeout: 400
-I (22318) BLE_HANDLER: GATTS event: 21
-I (22318) BLE_HANDLER: Indication confirmed by client - handle: 57, status: 0
-{'level': 'info', 'message': '[BLE RX] {"kind":"mic_lr_test","payload":{"sr":16000,"wait_ms":2000,"tone_ms":2000,"freq":1000,"vol":95,"baseline":{"rms_L":2481.3,"rms_R":2600.9},"tone":{"rms_L":25147.4,"rms_R":30280.0,"corr_L":0.99,"corr_R":0.95,"lr_corr":0.95,"balance_db":-1.6},"detect":{"left":true,"right":true,"lr_match":true},"pass":true}} ', 'data': None, 'timestamp': 1761691854.5145683}
-{'level': 'success', 'message': 'Processing microphone test results', 'data': None, 'timestamp': 1761691854.5145683}
-{'level': 'info', 'message': 'Left channel: 25147.4 RMS (PASS)', 'data': None, 'timestamp': 1761691854.5145683}
-{'level': 'info', 'message': 'Right channel: 30280.0 RMS (PASS)', 'data': None, 'timestamp': 1761691854.5145683}
-{'level': 'success', 'message': 'Test completed: PASS', 'data': None, 'timestamp': 1761691854.5145683}
-MAC Address: 8C:BF:EA:84:37:AA
-I (27118) wifi_helper: WiFi scan completed
-I (27118) wifi_helper: Found 21 networks, sending top 12 to BLE callback
-I (27118) BLE_HANDLER: 📡 Updating WiFi state with 12 available networks
-I (27118) BLE_HANDLER: 📤 Complete WiFi state: {"ssid":null,"strength":0,"connected":false,"available":[{"ssid":"MagicalToys","rssi":-32,"auth":"secured"},{"ssid":"Verizon_ZYF9LZ","rssi":-49,"auth":"secured"},{"ssid":"Verizon_9R44CH","rssi":-71,"auth":"secured"},{"ssid":"Mimas","rssi":-74,"auth":"secured"},{"ssid":"SoMa9-Guests","rssi":-75,"auth":"secured"}]}
-I (27118) BLE_HANDLER: ✅ Complete WiFi state sent (314 bytes)
-I (27118) wifi_helper: ✅ WiFi scan completed - BLE client will receive complete state update
-I (27118) wifi_helper: WiFi scan completed
-I (27118) BLE_HANDLER: Indication confirmed by client - handle: 47, status: 0
-I (37298) wifi_helper: Starting periodic WiFi scan...
+I (21808) BLE_HANDLER: 🔍 Starting continuous WiFi scanning for BLE client
+I (21808) wifi_helper: Starting continuous WiFi scanning every 15000 ms
+I (21808) wifi_helper: ✅ Scan task created successfully, handle: 0x3fcec038
+I (21808) wifi_helper: 🔍 Triggering immediate WiFi scan for instant network list
+I (21808) wifi_helper: ✅ Immediate scan task notification sent
+I (21808) wifi_helper: Starting periodic WiFi scan...
+I (21808) wifi_helper: Continuous WiFi scanning started successfully
+I (21808) BLE_HANDLER: ✅ WiFi scanning started - will send networks via BLE notifications
+I (21818) BLE_HANDLER: Sent GATT write response
+I (21818) BLE_HANDLER: Connection params updated - status: 0, min_int: 0, max_int: 0, latency: 0, timeout: 400
+I (21818) BLE_HANDLER: GATTS event: 21
+I (21828) BLE_HANDLER: Indication confirmed by client - handle: 57, status: 0
+{'level': 'info', 'message': '[BLE RX] {"kind":"mic_lr_test","payload":{"sr":16000,"wait_ms":2000,"tone_ms":2000,"freq":1000,"vol":95,"baseline":{"rms_L":2538.3,"rms_R":2470.9},"tone":{"rms_L":5705.5,"rms_R":4211.6,"corr_L":1.00,"corr_R":1.00,"lr_corr":0.99,"balance_db":2.6},"detect":{"left":true,"right":true,"lr_match":true},"pass":true}} ', 'data': None, 'timestamp': 1761695700.8500845}
+{'level': 'success', 'message': 'Processing microphone test results', 'data': None, 'timestamp': 1761695700.8500845}
+{'level': 'info', 'message': 'Left channel: 5705.5 RMS (PASS)', 'data': None, 'timestamp': 1761695700.8500845}
+{'level': 'info', 'message': 'Right channel: 4211.6 RMS (FAIL)', 'data': None, 'timestamp': 1761695700.8500845}
+{'level': 'error', 'message': 'Test completed: FAIL', 'data': None, 'timestamp': 1761695700.8500845}
+MAC Address: 8C:BF:EA:85:39:8E
+I (26628) wifi_helper: WiFi scan completed
+I (26628) wifi_helper: Found 6 networks, sending top 6 to BLE callback
+I (26628) BLE_HANDLER: 📡 Updating WiFi state with 6 available networks
+I (26628) BLE_HANDLER: 📤 Complete WiFi state: {"ssid":null,"strength":0,"connected":false,"available":[{"ssid":"Verizon_ZYF9LZ","rssi":-35,"auth":"secured"},{"ssid":"MagicalToys","rssi":-54,"auth":"secured"},{"ssid":"S23+ de Joāo Carlos","rssi":-75,"auth":"secured"},{"ssid":"ChoppedFi","rssi":-77,"auth":"secured"},{"ssid":"Trabzon","rssi":-78,"auth":"secured"}]}
+I (26628) BLE_HANDLER: ✅ Complete WiFi state sent (319 bytes)
+I (26628) wifi_helper: ✅ WiFi scan completed - BLE client will receive complete state update
+I (26628) wifi_helper: WiFi scan completed
+I (26628) BLE_HANDLER: Indication confirmed by client - handle: 47, status: 0
+I (36808) wifi_helper: Starting periodic WiFi scan...
 🎯 QA TEST RESULTS:
 ==================================================
 Test: Test Mic L/R Balance
-Result: ✅ PASS
-Details: L: 25147.4 RMS, R: 30280.0 RMS [Threshold: >4500]
+Result: ❌ FAIL
+Details: L: 5705.5 RMS, R: 4211.6 RMS [Threshold: >4500]
 Audio Balance: Unbalanced ⚠️
-RMS L: 25147.4
-RMS R: 30280.0
+RMS L: 5705.5
+RMS R: 4211.6
 ------------------------------
-Summary: 1/1 tests passed
-🎉 ALL TESTS PASSED - Device approved!
-✅ Data sent to Bondu API successfully
-⚠️ Firebase not available for backup sending
-🚀 Starting automatic production flash after successful QC...
+Summary: 0/1 tests passed
+⚠️ SOME TESTS FAILED - Device requires attention
+🔧 Please check the microphones and readjust the plush's felt/fabric
 ==================================================
+🔄 Try Again button shown - user can retry Bluetooth QC
 ⚠️ Failed to store QC results in Firebase
-{'level': 'info', 'message': 'Disconnected from Bluetooth device', 'data': None, 'timestamp': 1761691873.2424948}
-✅ ESP32 detected on port COM30
-I (42108) wifi_helper: WiFi scan completed
-I (42108) wifi_helper: Found 30 networks, sending top 12 to BLE callback
-I (42108) BLE_HANDLER: 📡 Updating WiFi state with 12 available networks
-I (42108) BLE_HANDLER: 📤 Complete WiFi state: {"ssid":null,"strength":0,"connected":false,"available":[{"ssid":"MagicalToys","rssi":-33,"auth":"secured"},{"ssid":"Verizon_ZYF9LZ","rssi":-51,"auth":"secured"},{"ssid":"Verizon_9R44CH","rssi":-70,"auth":"secured"},{"ssid":"SoMa9-Residences","rssi":-72,"auth":"secured"},{"ssid":"Mimas","rssi":-74,"auth":"secured"}]}
-I (42108) BLE_HANDLER: ✅ Complete WiFi state sent (318 bytes)
-I (42108) wifi_helper: ✅ WiFi scan completed - BLE client will receive complete state update
-I (42108) wifi_helper: WiFi scan completed
-I (42108) BLE_HANDLER: Indication confirmed by client - handle: 47, status: 0
-🏭 Initiating automatic production flash...
-🔌 Closing serial monitor to free port...
---- Serial monitor for COM30 stopped. ---
-✅ Serial monitor closed successfully
---- Processing new device on COM30 ---
-Production mode: Skipping eFuse read (automatic flash after QC)...
-Using verified hardware version: 1.9.1. Starting firmware flash...
--- Starting production flash for HW 1.9.1 on COM30 --
-('show_progress',)
--- Starting production flash for HW 1.9.1 on COM30 --
-Downloading production firmware for HW 1.9.1...
-Found compatible build: prod v0.1.7
-Downloading bootloader.bin...
-Downloading magical-toys.bin...
-Downloading partition-table.bin...
-Downloading ota_data_initial.bin...
-[OK] Production firmware for 1.9.1 downloaded successfully.
-Warning: Deprecated: Option '--flash_mode' is deprecated. Use '--flash-mode' instead.
-Warning: Deprecated: Option '--flash_freq' is deprecated. Use '--flash-freq' instead.
-Warning: Deprecated: Option '--flash_size' is deprecated. Use '--flash-size' instead.
-Warning: Deprecated: Choice 'default_reset' for option '--before' is deprecated. Use 'default-reset' instead.
-Warning: Deprecated: Choice 'hard_reset' for option '--after' is deprecated. Use 'hard-reset' instead.
-Warning: Deprecated: Command 'write_flash' is deprecated. Use 'write-flash' instead.
-esptool v5.1.0
-Serial port COM30:
-Connecting...
-Connected to ESP32-S3 on COM30:
-Chip type:          ESP32-S3 (QFN56) (revision v0.2)
-Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
-Crystal frequency:  40MHz
-USB mode:           USB-Serial/JTAG
-MAC:                8c:bf:ea:84:37:a8
-
-Uploading stub flasher...
-Running stub flasher...
-Stub flasher running.
-Changing baud rate to 460800...
-Changed.
-
-Configuring flash size...
-Flash will be erased from 0x00000000 to 0x00007fff...
-Flash will be erased from 0x00260000 to 0x004dafff...
-Flash will be erased from 0x00010000 to 0x00010fff...
-Flash will be erased from 0x00015000 to 0x00016fff...
-SHA digest in image updated.
-Compressed 31360 bytes to 19340...
-
-('progress_update', 'Flashing... 0.0%')
-
-('progress_update', 'Flashing... 84.7%')
-
-('progress_update', 'Flashing... 100.0%')
-Wrote 31360 bytes (19340 compressed) at 0x00000000 in 0.3 seconds (978.1 kbit/s).
-Hash of data verified.
-Compressed 2598128 bytes to 1630279...
-
-('progress_update', 'Flashing... 0.0%')
-('progress', 0)
-
-('progress_update', 'Flashing... 1.0%')
-('progress', 1)
-
-('progress_update', 'Flashing... 2.0%')
-('progress', 2)
-
-('progress_update', 'Flashing... 3.0%')
-('progress', 3)
-
-('progress_update', 'Flashing... 4.0%')
-('progress', 4)
-
-('progress_update', 'Flashing... 5.0%')
-('progress', 5)
-
-('progress_update', 'Flashing... 6.0%')
-('progress', 6)
-
-('progress_update', 'Flashing... 7.0%')
-('progress', 7)
-
-('progress_update', 'Flashing... 8.0%')
-('progress', 8)
-
-('progress_update', 'Flashing... 9.0%')
-('progress', 9)
-
-('progress_update', 'Flashing... 10.0%')
-('progress', 10)
-
-('progress_update', 'Flashing... 11.1%')
-('progress', 11)
-
-('progress_update', 'Flashing... 12.1%')
-('progress', 12)
-
-('progress_update', 'Flashing... 13.1%')
-('progress', 13)
-
-('progress_update', 'Flashing... 14.1%')
-('progress', 14)
-
-('progress_update', 'Flashing... 15.1%')
-('progress', 15)
-
-('progress_update', 'Flashing... 16.1%')
-('progress', 16)
-
-('progress_update', 'Flashing... 17.1%')
-('progress', 17)
-
-('progress_update', 'Flashing... 18.1%')
-('progress', 18)
-
-('progress_update', 'Flashing... 19.1%')
-('progress', 19)
-
-('progress_update', 'Flashing... 20.1%')
-('progress', 20)
-
-('progress_update', 'Flashing... 21.1%')
-('progress', 21)
-
-('progress_update', 'Flashing... 22.1%')
-('progress', 22)
-
-('progress_update', 'Flashing... 23.1%')
-('progress', 23)
-
-('progress_update', 'Flashing... 24.1%')
-('progress', 24)
-
-('progress_update', 'Flashing... 25.1%')
-('progress', 25)
-
-('progress_update', 'Flashing... 26.1%')
-('progress', 26)
-
-('progress_update', 'Flashing... 27.1%')
-('progress', 27)
-
-('progress_update', 'Flashing... 28.1%')
-('progress', 28)
-
-('progress_update', 'Flashing... 29.1%')
-('progress', 29)
-
-('progress_update', 'Flashing... 30.1%')
-('progress', 30)
-
-('progress_update', 'Flashing... 31.2%')
-('progress', 31)
-
-('progress_update', 'Flashing... 32.2%')
-('progress', 32)
-
-('progress_update', 'Flashing... 33.2%')
-('progress', 33)
-
-('progress_update', 'Flashing... 34.2%')
-('progress', 34)
-
-('progress_update', 'Flashing... 35.2%')
-('progress', 35)
-
-('progress_update', 'Flashing... 36.2%')
-('progress', 36)
-
-('progress_update', 'Flashing... 37.2%')
-('progress', 37)
-
-('progress_update', 'Flashing... 38.2%')
-('progress', 38)
-
-('progress_update', 'Flashing... 39.2%')
-('progress', 39)
-
-('progress_update', 'Flashing... 40.2%')
-('progress', 40)
-
-('progress_update', 'Flashing... 41.2%')
-('progress', 41)
-
-('progress_update', 'Flashing... 42.2%')
-('progress', 42)
-
-('progress_update', 'Flashing... 43.2%')
-('progress', 43)
-
-('progress_update', 'Flashing... 44.2%')
-('progress', 44)
-
-('progress_update', 'Flashing... 45.2%')
-('progress', 45)
-
-('progress_update', 'Flashing... 46.2%')
-('progress', 46)
-
-('progress_update', 'Flashing... 47.2%')
-('progress', 47)
-
-('progress_update', 'Flashing... 48.2%')
-('progress', 48)
-
-('progress_update', 'Flashing... 49.2%')
-('progress', 49)
-
-('progress_update', 'Flashing... 50.2%')
-('progress', 50)
-
-('progress_update', 'Flashing... 51.3%')
-('progress', 51)
-
-('progress_update', 'Flashing... 52.3%')
-('progress', 52)
-
-('progress_update', 'Flashing... 53.3%')
-('progress', 53)
-
-('progress_update', 'Flashing... 54.3%')
-('progress', 54)
-
-('progress_update', 'Flashing... 55.3%')
-('progress', 55)
-
-('progress_update', 'Flashing... 56.3%')
-('progress', 56)
-
-('progress_update', 'Flashing... 57.3%')
-('progress', 57)
-
-('progress_update', 'Flashing... 58.3%')
-('progress', 58)
-
-('progress_update', 'Flashing... 59.3%')
-('progress', 59)
-
-('progress_update', 'Flashing... 60.3%')
-('progress', 60)
-
-('progress_update', 'Flashing... 61.3%')
-('progress', 61)
-
-('progress_update', 'Flashing... 62.3%')
-('progress', 62)
-
-('progress_update', 'Flashing... 63.3%')
-('progress', 63)
-
-('progress_update', 'Flashing... 64.3%')
-('progress', 64)
-
-('progress_update', 'Flashing... 65.3%')
-('progress', 65)
-
-('progress_update', 'Flashing... 66.3%')
-('progress', 66)
-
-('progress_update', 'Flashing... 67.3%')
-('progress', 67)
-
-('progress_update', 'Flashing... 68.3%')
-('progress', 68)
-
-('progress_update', 'Flashing... 69.3%')
-('progress', 69)
-
-('progress_update', 'Flashing... 70.3%')
-('progress', 70)
-
-('progress_update', 'Flashing... 71.4%')
-('progress', 71)
-
-('progress_update', 'Flashing... 72.4%')
-('progress', 72)
-
-('progress_update', 'Flashing... 73.4%')
-('progress', 73)
-
-('progress_update', 'Flashing... 74.4%')
-('progress', 74)
-
-('progress_update', 'Flashing... 75.4%')
-('progress', 75)
-
-('progress_update', 'Flashing... 76.4%')
-('progress', 76)
-
-('progress_update', 'Flashing... 77.4%')
-('progress', 77)
-
-('progress_update', 'Flashing... 78.4%')
-('progress', 78)
-
-('progress_update', 'Flashing... 79.4%')
-('progress', 79)
-
-('progress_update', 'Flashing... 80.4%')
-('progress', 80)
-
-('progress_update', 'Flashing... 81.4%')
-('progress', 81)
-
-('progress_update', 'Flashing... 82.4%')
-('progress', 82)
-
-('progress_update', 'Flashing... 83.4%')
-('progress', 83)
-
-('progress_update', 'Flashing... 84.4%')
-('progress', 84)
-
-('progress_update', 'Flashing... 85.4%')
-('progress', 85)
-
-('progress_update', 'Flashing... 86.4%')
-('progress', 86)
-
-('progress_update', 'Flashing... 87.4%')
-('progress', 87)
-
-('progress_update', 'Flashing... 88.4%')
-('progress', 88)
-
-('progress_update', 'Flashing... 89.4%')
-('progress', 89)
-
-('progress_update', 'Flashing... 90.4%')
-('progress', 90)
-
-('progress_update', 'Flashing... 91.5%')
-('progress', 91)
-
-('progress_update', 'Flashing... 92.5%')
-('progress', 92)
-
-('progress_update', 'Flashing... 93.5%')
-('progress', 93)
-
-('progress_update', 'Flashing... 94.5%')
-('progress', 94)
-
-('progress_update', 'Flashing... 95.5%')
-('progress', 95)
-
-('progress_update', 'Flashing... 96.5%')
-('progress', 96)
-
-('progress_update', 'Flashing... 97.5%')
-('progress', 97)
-
-('progress_update', 'Flashing... 98.5%')
-('progress', 98)
-
-('progress_update', 'Flashing... 99.5%')
-('progress', 99)
-
-('progress_update', 'Flashing... 100.0%')
-('progress', 100)
-Wrote 2598128 bytes (1630279 compressed) at 0x00260000 in 14.1 seconds (1473.5 kbit/s).
-Hash of data verified.
-Compressed 3072 bytes to 176...
-
-('progress_update', 'Flashing... 0.0%')
-
-('progress_update', 'Flashing... 100.0%')
-Wrote 3072 bytes (176 compressed) at 0x00010000 in 0.0 seconds (1115.5 kbit/s).
-Hash of data verified.
-Compressed 8192 bytes to 31...
-
-('progress_update', 'Flashing... 0.0%')
-
-('progress_update', 'Flashing... 100.0%')
-Wrote 8192 bytes (31 compressed) at 0x00015000 in 0.0 seconds (2062.5 kbit/s).
-Hash of data verified.
-
-Hard resetting via RTS pin...
-[OK] Flash successful!
-('hide_progress',)
--- Finished flashing COM30 --
-Flash completed successfully. Starting serial monitor...
---- Serial monitor started for COM30 ---
-✅ ESP32 detected on port COM30
-I (526) efuse: BURN BLOCK0 - OK (all write block bits are set)
-I (526) efuse: Batch mode. Prepared fields are committed
-I (526) esp_image: segment 0: paddr=00000020 vaddr=3fce2980 size=0277ch ( 10108)
-I (528) esp_image: segment 1: paddr=000027a4 vaddr=403c8700 size=00004h (     4)
-I (529) esp_image: segment 2: paddr=000027b0 vaddr=403c8704 size=00c80h (  3200)
-I (529) esp_image: segment 3: paddr=00003438 vaddr=403cb700 size=04624h ( 17956)
-I (663) flash_encrypt: bootloader encrypted successfully
-I (679) flash_encrypt: partition table encrypted and loaded successfully
-I (679) flash_encrypt: Encrypting partition 1 at offset 0x15000 (length 0x2000)...
-I (702) flash_encrypt: Done encrypting
-I (702) flash_encrypt: Encrypting partition 3 at offset 0x18000 (length 0x4000)...
-I (727) flash_encrypt: Done encrypting
-I (727) flash_encrypt: Encrypting partition 4 at offset 0x1c000 (length 0x2c000)...
-I (1005) flash_encrypt: Done encrypting
-I (1005) esp_image: segment 0: paddr=00260020 vaddr=3c140020 size=124394h (1196948) map
-I (1216) esp_image: segment 1: paddr=003843bc vaddr=3fca2b00 size=06c08h ( 27656)
-I (1222) esp_image: segment 2: paddr=0038afcc vaddr=40374000 size=0504ch ( 20556)
-I (1226) esp_image: segment 3: paddr=00390020 vaddr=42000020 size=130964h (1247588) map
-I (1446) esp_image: segment 4: paddr=004c098c vaddr=4037904c size=199e4h (104932)
-I (1465) esp_image: segment 5: paddr=004da378 vaddr=50000000 size=00020h (    32)
-I (1465) esp_image: segment 6: paddr=004da3a0 vaddr=600fe000 size=00120h (   288)
-I (1466) flash_encrypt: Encrypting partition 6 at offset 0x260000 (length 0x500000)...
-I (18686) flash_encrypt: Done encrypting
-E (18686) esp_image: image at 0x760000 has invalid magic byte (nothing flashed here?)
-I (18687) flash_encrypt: Setting CRYPT_CNT for permanent encryption
-I (18687) efuse: BURN BLOCK0
-I (18689) efuse: BURN BLOCK0 - OK (all write block bits are set)
-I (18690) flash_encrypt: Flash encryption completed
-I (18690) boot: Resetting with flash encryption enabled...
-ESP-ROM:esp32s3-20210327
-Build:Mar 27 2021
-rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
-Saved PC:0x403ccf81
-SPIWP:0xee
-mode:DIO, clock div:1
-load:0x3fce2980,len:0x277c
-load:0x403c8700,len:0x4
-load:0x403c8704,len:0xc80
-load:0x403cb700,len:0x4624
-entry 0x403c8914
-I (33) boot: ESP-IDF v5.4.1 2nd stage bootloader
-I (33) boot: compile time Sep 16 2025 14:40:01
-I (33) boot: Multicore bootloader
-I (33) boot: chip revision: v0.2
-I (34) boot: efuse block revision: v1.3
-I (34) boot.esp32s3: Boot SPI Speed : 80MHz
-I (34) boot.esp32s3: SPI Mode       : DIO
-I (34) boot.esp32s3: SPI Flash Size : 16MB
-I (34) boot: Enabling RNG early entropy source...
-I (35) boot: Partition Table:
-I (35) boot: ## Label            Usage          Type ST Offset   Length
-I (35) boot:  0 nvs              WiFi data        01 02 00011000 00004000
-I (35) boot:  1 otadata          OTA data         01 00 00015000 00002000
-I (36) boot:  2 phy_init         RF data          01 01 00017000 00001000
-I (36) boot:  3 nvs_keys         NVS keys         01 04 00018000 00004000
-I (37) boot:  4 coredump         Unknown data     01 03 0001c000 0002c000
-I (37) boot:  5 storage          Unknown data     01 82 00048000 00209000
-I (37) boot:  6 ota_0            OTA app          00 10 00260000 00500000
-I (38) boot:  7 ota_1            OTA app          00 11 00760000 00500000
-I (38) boot: End of partition table
-I (39) esp_image: segment 0: paddr=00260020 vaddr=3c140020 size=124394h (1196948) map
-I (274) esp_image: segment 1: paddr=003843bc vaddr=3fca2b00 size=06c08h ( 27656) load
-I (280) esp_image: segment 2: paddr=0038afcc vaddr=40374000 size=0504ch ( 20556) load
-I (285) esp_image: segment 3: paddr=00390020 vaddr=42000020 size=130964h (1247588) map
-I (530) esp_image: segment 4: paddr=004c098c vaddr=4037904c size=199e4h (104932) load
-I (555) esp_image: segment 5: paddr=004da378 vaddr=50000000 size=00020h (    32) load
-I (556) esp_image: segment 6: paddr=004da3a0 vaddr=600fe000 size=00120h (   288) load
-I (568) boot: Loaded app from partition at offset 0x260000
-I (568) boot: Checking flash encryption...
-I (569) flash_encrypt: flash encryption is enabled (0 plaintext flashes left)
-I (569) boot: Disabling RNG early entropy source...
-I (570) octal_psram: vendor id    : 0x0d (AP)
-I (570) octal_psram: dev id       : 0x02 (generation 3)
-I (570) octal_psram: density      : 0x03 (64 Mbit)
-I (571) octal_psram: good-die     : 0x01 (Pass)
-I (571) octal_psram: Latency      : 0x01 (Fixed)
-I (571) octal_psram: VCC          : 0x01 (3V)
-I (571) octal_psram: SRF          : 0x01 (Fast Refresh)
-I (572) octal_psram: BurstType    : 0x01 (Hybrid Wrap)
-I (572) octal_psram: BurstLen     : 0x01 (32 Byte)
-I (572) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)
-I (572) octal_psram: DriveStrength: 0x00 (1/1)
-I (573) MSPI Timing: PSRAM timing tuning index: 4
-I (573) esp_psram: Found 8MB PSRAM device
-I (574) esp_psram: Speed: 80MHz
-I (736) mmu_psram: Read only data copied and mapped to SPIRAM
-I (736) cpu_start: Multicore app
-I (1353) esp_psram: SPI SRAM memory test OK
-I (1362) cpu_start: Pro cpu start user code
-I (1362) cpu_start: cpu freq: 240000000 Hz
-I (1362) app_init: Application information:
-I (1362) app_init: Project name:     magical-toys
-I (1363) app_init: App version:      0.1.8-prod
-I (1363) app_init: Compile time:     Sep 16 2025 14:40:11
-I (1363) app_init: ELF file SHA256:  8da35de32...
-I (1363) app_init: ESP-IDF:          v5.4.1
-I (1363) efuse_init: Min chip rev:     v0.0
-I (1363) efuse_init: Max chip rev:     v0.99
-I (1363) efuse_init: Chip rev:         v0.2
-I (1364) heap_init: Initializing. RAM available for dynamic allocation:
-I (1364) heap_init: At 3FCB6BD0 len 00032B40 (202 KiB): RAM
-I (1364) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
-I (1365) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
-I (1365) heap_init: At 600FE120 len 00001EC8 (7 KiB): RTCRAM
-I (1607) esp_psram: Adding pool of 6976K of PSRAM memory to heap allocator
-I (1608) spi_flash: detected chip: generic
-I (1608) spi_flash: flash io: dio
-I (1609) flash_encrypt: Flash encryption mode is RELEASE
-I (1609) efuse: BURN BLOCK0
-I (1611) efuse: BURN BLOCK0 - OK (all write block bits are set)
-I (1612) sleep_gpio: Configure to isolate all GPIO pins in sleep state
-I (1613) sleep_gpio: Enable automatic switching of GPIO sleep configuration
-I (1613) coexist: coex firmware version: e727207
-I (1614) coexist: coexist rom version e7ae62f
-I (1615) main_task: Started on CPU0
-I (1625) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
-I (1625) main_task: Calling app_main()
-W (1625) SPIFFS: mount failed, -10025. formatting...
-I (3925) LOGGING: Found 0 log file(s) on device
-I (4095) LOGGING: Created new log file: /spiffs/log_89.txt
-I (4135) device_utils: Device ID initialized: 8cbfea8437a8
-I (4135) device_utils: MAC Address: 8C:BF:EA:84:37:A8
-I (4135) LOGGING: Logging initialized with version: 0.1.8-prod
-I (4135) LOGGING: Muting all logging from this point onwards.
+{'level': 'info', 'message': 'Disconnected from Bluetooth device', 'data': None, 'timestamp': 1761695716.5628653}
+✅ ESP32 detected on port COM31
+W (40718) BT_HCI: hcif disc complete: hdl 0x1, rsn 0x13
+I (40718) BLE_HANDLER: Client disconnected - conn_id: 0, reason: 0x13 (Remote User Terminated)
+I (40718) BLE_HANDLER: Connection stats: duration=26122 ms, idle_time=23149 ms
+I (40718) wifi_helper: Stopping continuous WiFi scanning
+I (40718) wifi_helper: WiFi scan task ending
+I (40818) wifi_helper: Continuous WiFi scanning stopped
+I (40818) BLE_HANDLER: 🛑 WiFi scanning stopped (explicit)
+I (40818) BLE_HANDLER: Connection status changed to: DISCONNECTED
+I (40818) BLE_HANDLER: Connection status changed to: ADVERTISING
+I (40818) BLE_HANDLER: ✓ BLE advertising started with optimized configuration
+I (40818) BLE_HANDLER: ✓ Service UUID in advertising data: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
+I (40818) BLE_HANDLER: ✓ Device name in scan response: Toy-398C
+I (40818) BLE_HANDLER: ✓ React Native app should now be able to discover this device
+I (40818) led_manager: Clearing LED state overrides
+I (40818) neopixel: Stopping any running LED animation
+I (40818) neopixel: LED animation stopped
+I (40818) neopixel: Stopping any running LED animation
+I (40818) neopixel: LED animation stopped
+I (40818) BLE_HANDLER: ✓ Advertising data configured successfully
+I (40818) BLE_HANDLER: ✓ Service UUID a07498ca-ad5b-474e-940d-16f1fbe7e8cd is now in advertising data
+I (40818) BLE_HANDLER: ✓ Scan response data set complete successfully
+I (40818) BLE_HANDLER: ✓ Device name and TX power are now in scan response
+I (40818) BLE_HANDLER: 🚀 ADVERTISING STARTED SUCCESSFULLY!
+I (40818) BLE_HANDLER: 🔍 React Native app should now be able to find this device
+I (40818) BLE_HANDLER: 📱 Device appears as: Toy-398C
+I (40818) BLE_HANDLER: 🔗 Service UUID: a07498ca-ad5b-474e-940d-16f1fbe7e8cd
+I (40818) BLE_HANDLER: ⚡ The device is now discoverable and ready for connection!
+I (41618) wifi_helper: WiFi scan completed
+I (41618) wifi_helper: WiFi scan completed
+I (61398) BATTERY_MONITOR: 🔍 Coulomb SoC calc: REG_QH=0x0582 → 705.0 mAh → 11.8% SoC
+I (61408) BATTERY_MONITOR: === BATTERY STATUS ===
+I (61408) BATTERY_MONITOR: Present:     YES
+I (61408) BATTERY_MONITOR: Voltage:     3.387 V
+I (61408) BATTERY_MONITOR: USB Power:   DETECTED
+I (61408) BATTERY_MONITOR: Charge IC:   CHARGING IN PROGRESS (STAT1=1, STAT2=0)
+I (61408) BATTERY_MONITOR: Current:     520.9 mA
+I (61408) BATTERY_MONITOR: Avg Current: 444.2 mA
+I (61408) BATTERY_MONITOR: SOC:         11.8%
+I (61408) BATTERY_MONITOR: Temperature: 29.7°C
+I (61408) BATTERY_MONITOR: Cycles:      11
+I (61408) BATTERY_MONITOR: Charging:    YES
+I (61408) BATTERY_MONITOR: Session:     #0
+I (61408) BATTERY_MONITOR: ======================
+--- Device COM31 disconnected. Closing monitor. ---
+--- Serial monitor for COM31 stopped. ---
+🌐 Language changed to zh_CN - refreshing all UI texts
+🌐 Language changed to zh_CN - refreshing all UI texts
+🌐 Language changed to en - refreshing all UI texts
+🌐 Language changed to zh_CN - refreshing all UI texts
